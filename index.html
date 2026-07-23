@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMD — Votre boutique en ligne, sans le chaos de WhatsApp</title>
+<meta name="description" content="CMD transforme votre catalogue WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#ffffff;
+    --bg-alt:#f7f7f7;
+    --card:#ffffff;
+
+    --orange:#e15b0f;
+    --orange-light:#ff8a3d;
+
+    --white:#171717;
+    --gray:#666666;
+
+    --line:rgba(0,0,0,0.08);
+    --line-strong:rgba(0,0,0,0.15);
+}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body{
+    font-family:'Montserrat',sans-serif;
+}
+  h1,h2,h3,.display{
+
+    letter-spacing:-0.02em;
+    line-height:1.05;
+  }
+  h1,h2,h3,.display{
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+}
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:0.72rem;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){@media(max-width:640px){
+    .wrap{
+        padding:0 28px;
+    }
+}}
+
+  /* NAV */
+  header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:50;
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(0,0,0,0.08);
+}
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:34px;height:34px;border-radius:8px;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;}
+  .brand-text .powered{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--gray);letter-spacing:0.06em;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{
+    font-size:0.92rem;
+    color:#555;
+    transition:color .2s;
+}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{
+    background:var(--orange);color:white;padding:10px 20px;border-radius:999px;
+    font-weight:600;font-size:0.88rem;transition:background .2s, transform .2s;
+  }
+  .nav-cta:hover{background:var(--orange-light);transform:translateY(-1px);}
+  .nav-toggle{display:none;}
+  @media(max-width:820px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;background:none;border:1px solid var(--line-strong);color:var(--white);padding:8px 14px;border-radius:8px;font-size:0.85rem;}
+  }
+
+  /* HERO */
+  .hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+
+    padding:130px 0 70px;
+
+
+overflow:hidden;
+
+}
+
+@media(max-width:640px){
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+.hero p.lead{
+    font-size:1rem;
+    line-height:1.7;
+}
+
+}
+
+@media(max-width:640px){
+
+.cta-row{
+    flex-direction:row;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    width:auto;
+    padding:14px 20px;
+}
+
+}
+
+.hero-video{
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+z-index:-3;
+
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.45)
+    );
+    z-index:-2;
+}
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  @media(max-width:940px){.hero-grid{grid-template-columns:1fr;}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--orange-light);margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .hero h1{
+    font-size:clamp(2.4rem,5.2vw,4.1rem);
+    margin-bottom:22px;
+    color:white;
+}
+  .hero h1 em{color:var(--orange);font-style:normal;}
+  .hero p.lead{
+    color:rgba(255,255,255,.85);
+    font-size:1.15rem;
+    line-height:1.7;
+    max-width:620px;
+    margin-bottom: 14px;
+}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+
+padding:16px 30px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+.cta-band h2{
+    color:white;
+}
+
+.cta-band p{
+    color:rgba(255,255,255,.75);
+}
+.btn-primary{
+    background:var(--orange);
+    color:white;
+}
+  .btn-primary:hover{background:var(--orange-light);transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line-strong);color:var(--white);}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange-light);transform:translateY(-2px);}
+
+  /* PHONE MOCKUP */
+  .phone-stage{position:relative;display:flex;justify-content:center;}
+  .phone{
+    width:270px;aspect-ratio:9/18.5;
+    background:#0e0e0f;border:8px solid #050506;border-radius:38px;
+    position:relative;box-shadow:0 40px 90px -20px rgba(225,91,15,0.45), 0 0 0 1px rgba(245,243,238,0.06);
+    animation:float 5.5s ease-in-out infinite;
+    overflow:hidden;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(-2deg);}
+    50%{transform:translateY(-18px) rotate(1deg);}
+  }
+  .phone .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:20px;background:#050506;border-radius:0 0 14px 14px;z-index:5;}
+  .phone-screen{
+    position:absolute;inset:4px;border-radius:30px;overflow:hidden;
+    background:linear-gradient(180deg,#141412,#0b0b0c);
+    display:flex;flex-direction:column;
+  }
+  .ps-top{padding:26px 16px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);}
+  .ps-top img{width:20px;height:20px;border-radius:5px;}
+  .ps-top span{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.82rem;}
+  .ps-items{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;}
+  .ps-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;}
+  .ps-thumb{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,var(--orange),#7a2f06);flex-shrink:0;}
+  .ps-card .txt{flex:1;}
+  .ps-card .txt .t1{font-size:0.72rem;font-weight:600;margin-bottom:3px;}
+  .ps-card .txt .t2{font-size:0.64rem;color:var(--gray);}
+  .ps-price{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--orange-light);}
+  .ps-bottom{padding:12px 16px 20px;}
+  .ps-btn{background:var(--orange);color:#0b0b0c;text-align:center;padding:10px;border-radius:10px;font-size:0.72rem;font-weight:700;}
+  .glow-badge{
+    position:absolute;bottom:6%;left:-8%;background:var(--bg-alt);border:1px solid var(--line-strong);
+    border-radius:14px;padding:12px 16px;box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    animation:float 5.5s ease-in-out infinite;animation-delay:.4s;
+  }
+  .glow-badge .mono{color:var(--gray);}
+  .glow-badge .val{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--orange-light);font-size:1.15rem;}
+  @media(max-width:940px){.glow-badge{display:none;}}
+
+  /* SECTIONS */
+  section{
+    padding:120px 0;
+    position:relative;
+}
+@media(max-width:640px){
+
+section{
+    padding:80px 0;
+}
+
+}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head .mono{color:var(--orange-light);margin-bottom:14px;display:block;}
+  .section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);}
+  .section-head p{color:var(--gray);margin-top:16px;font-size:1.02rem;line-height:1.6;}
+
+  /* PROBLEM / SOLUTION */
+  .ps-compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+  @media(max-width:780px){.ps-compare{grid-template-columns:1fr;}}
+  .ps-col{
+    background:white;
+    padding:48px;
+}
+.ps-col.bad{
+    background:#fafafa;
+}
+.ps-col.good{
+    background:rgba(225,91,15,0.06);
+}
+  .ps-col h3{font-size:1.3rem;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:4px 8px;border-radius:6px;}
+  .tag.bad{background:rgba(255,90,90,0.12);color:#ff8a8a;}
+  .tag.good{background:rgba(225,91,15,0.18);color:var(--orange-light);}
+  .ps-col ul{list-style:none;display:flex;flex-direction:column;gap:16px;}
+  .ps-col li{color:var(--gray);font-size:0.95rem;line-height:1.5;padding-left:20px;position:relative;}
+  .ps-col.bad li::before{content:"—";position:absolute;left:0;color:#7a5a54;}
+  .ps-col.good li::before{content:"—";position:absolute;left:0;color:var(--orange);}
+  .ps-col.good li{color:var(--white);}
+
+  /* LAUNCH VIDEO */
+  .video-frame{
+    aspect-ratio:16/9;
+    border-radius:20px;
+    border:1px solid var(--line-strong);
+    overflow:hidden;
+    position:relative;
+    background:#000;
+}
+.video-frame video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+  .video-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, rgba(225,91,15,0.16), transparent 65%);}
+  .play-btn{
+    width:64px;height:64px;border-radius:50%;background:var(--orange);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    box-shadow:0 0 0 0 rgba(225,91,15,0.5);animation:pulse 2.4s infinite;z-index:2;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(225,91,15,0.45);}
+    70%{box-shadow:0 0 0 22px rgba(225,91,15,0);}
+    100%{box-shadow:0 0 0 0 rgba(225,91,15,0);}
+  }
+  .play-btn svg{width:20px;height:20px;fill:#0b0b0c;margin-left:3px;}
+  .video-frame .mono{z-index:2;color:var(--gray);}
+
+  /* DEMO */
+  .demo-box{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:24px;padding:56px;
+  }
+  @media(max-width:820px){.demo-box{grid-template-columns:1fr;padding:36px 28px;}}
+  .demo-box h3{font-size:1.7rem;margin-bottom:16px;}
+  .demo-box p{color:var(--gray);line-height:1.6;margin-bottom:26px;}
+  .demo-visual{
+    border-radius:16px;border:1px solid var(--line-strong);background:var(--bg);
+    aspect-ratio:16/11;display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+  }
+  .demo-visual .grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:24px 24px;opacity:0.4;}
+  .demo-visual span{z-index:2;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--orange-light);letter-spacing:0.08em;}
+
+  /* PRICING */
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:980px){.pricing-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.pricing-grid{grid-template-columns:1fr;}}
+  .plan{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 24px;
+    display:flex;flex-direction:column;position:relative;
+    clip-path:polygon(0 0,100% 0,100% 100%,24px 100%,0 calc(100% - 24px));
+  }
+  .plan.featured{border-color:var(--orange);background:linear-gradient(180deg,rgba(225,91,15,0.10),var(--card));}
+  .plan.soon{opacity:0.55;}
+  .plan .badge{
+    position:absolute;top:-11px;right:20px;background:var(--orange);color:#0b0b0c;
+    font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:4px 10px;border-radius:999px;font-weight:600;
+  }
+  .plan .badge.soon-badge{background:var(--bg-alt);color:var(--gray);border:1px solid var(--line-strong);}
+  .plan h4{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;margin-bottom:6px;}
+  .plan .price{font-family:'IBM Plex Mono',monospace;font-size:1.6rem;color:var(--orange-light);margin:14px 0 4px;}
+  .plan .price small{font-size:0.7rem;color:var(--gray);font-weight:400;}
+  .plan .desc{color:var(--gray);font-size:0.85rem;margin-bottom:20px;min-height:36px;}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px;flex:1;}
+  .plan li{font-size:0.85rem;color:var(--white);padding-left:18px;position:relative;}
+  .plan li::before{content:"+";position:absolute;left:0;color:var(--orange);font-weight:700;}
+  .plan .btn{justify-content:center;width:100%;}
+
+  /* FOOTER / CONTACT */
+  .cta-band{
+    background:linear-gradient(135deg,#1a0f06,#0b0b0c);
+    border:1px solid var(--line);border-radius:24px;
+    padding:64px 48px;text-align:center;
+  }
+  @media(max-width:640px){.cta-band{padding:44px 24px;}}
+  .cta-band h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:18px;}
+  .cta-band p{color:var(--gray);margin-bottom:30px;}
+  .cta-band .cta-row{justify-content:center;}
+
+  footer{border-top:1px solid var(--line);padding:40px 0;}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;color:var(--gray);font-size:0.85rem;}
+  .footer-brand img{width:22px;height:22px;border-radius:6px;}
+  .social-links{display:flex;gap:18px;}
+  .social-links a{color:var(--gray);font-size:0.85rem;transition:color .2s;}
+  .social-links a:hover{color:var(--orange-light);}
+
+  ::selection{background:var(--orange);color:#0b0b0c;}
+
+
+  .video-frame{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:16/9;
+    border-radius:20px;
+    background:#000;
+}
+
+.video-frame video{
+    position:relative;
+    z-index:5;
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@media(max-width:940px){
+
+.hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.hero p.lead{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.cta-row{
+    justify-content:center;
+}
+
+.eyebrow{
+    justify-content:center;
+}
+
+}
+
+@media(max-width:640px){
+
+.hero{
+    min-height:100vh;
+}
+
+}
+
+.hero-contact{
+    color:white;
+    border-color:rgba(255,255,255,.5);
+}
+
+.hero-contact:hover{
+    border-color:var(--orange);
+    color:var(--orange);
+}
+
+.advantages-grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+
+}
+
+
+.adv-card{
+
+background:white;
+border:1px solid var(--line);
+border-radius:24px;
+padding:40px;
+
+}
+
+
+.adv-card.seller{
+
+background:rgba(225,91,15,.05);
+
+}
+
+
+.adv-label{
+
+display:inline-block;
+font-size:.75rem;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:var(--orange);
+font-weight:700;
+margin-bottom:18px;
+
+}
+
+
+.adv-card h3{
+
+font-size:1.5rem;
+margin-bottom:32px;
+
+}
+
+
+.feature{
+
+padding:18px 0;
+border-bottom:1px solid var(--line);
+
+}
+
+
+.feature:last-child{
+
+border-bottom:none;
+
+}
+
+
+.feature h4{
+
+font-size:1rem;
+margin-bottom:8px;
+
+}
+
+
+.feature p{
+
+color:#666;
+line-height:1.6;
+font-size:.92rem;
+
+}
+
+
+
+@media(max-width:800px){
+
+.advantages-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.adv-card{
+
+padding:28px;
+
+}
+
+}
+
+.demo-visual{
+    border-radius:24px;
+   
+  
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+}
+
+.phone-demo{
+    width:280px;
+    aspect-ratio:9/19;
+    border-radius:35px;
+    overflow:hidden;
+    background:black;
+  
+}
+
+
+
+.demo-visual video{
+
+width:100%;
+max-width:360px;
+
+aspect-ratio:9/16;
+
+object-fit:contain;
+
+border-radius:20px;
+
+display:block;
+
+}
+
+
+.demo-visual{
+    aspect-ratio:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.demo-visual video{
+    width:auto !important;
+    height:600px !important;
+    max-width:100% !important;
+    aspect-ratio:9/16 !important;
+    object-fit:contain !important;
+    display:block;
+}
+
+.demo-visual video{
+    border-radius:0 !important;
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <img src="1C621DE3-4443-4809-A987-882F313088E0_1_105_c.jpeg" alt="Logo CMD">
+      <div class="brand-text">
+        <span class="name">CMD</span>
+        <span class="powered">Powered by HV</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#solution">Solution</a>
+      <a href="#demo">Démo</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20CMD" class="nav-cta">Contactez-nous</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="Video_1-2.mp4" type="video/mp4">
+    </video>
+    
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-grid">
+      <div>
+        
+        <h1>Votre catalogue mérite mieux <em>qu'un fil WhatsApp.</em></h1>
+        <p class="lead">Une boutique en ligne pensée pour les vendeurs qui veulent vendre plus simplement, mieux organiser leurs produits et offrir une meilleure expérience à leurs clients.</p>
+        <div class="cta-row">
+          <a href="#demo" class="btn btn-primary">Voir la démo</a>
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20CMD" class="btn btn-ghost hero-contact">Contactez-nous</a>
+        </div>
+      </div>
+      <!--  <div class="phone-stage">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="phone-screen">
+            <div class="ps-top"><img src="logo.png" alt=""><span>CMD</span></div>
+            <div class="ps-items">
+              <div class="ps-card"><div class="ps-thumb"></div><div class="txt"><div class="t1">Robe wax imprimée</div><div class="t2">En stock</div></div><div class="ps-price">15 000</div></div>
+              <div class="ps-card"><div class="ps-thumb"></div><div class="txt"><div class="t1">Sneakers urbaines</div><div class="t2">3 tailles dispo</div></div><div class="ps-price">28 000</div></div>
+              <div class="ps-card"><div class="ps-thumb"></div><div class="txt"><div class="t1">Sac à main cuir</div><div class="t2">Édition limitée</div></div><div class="ps-price">22 500</div></div>
+            </div>
+            <div class="ps-bottom"><div class="ps-btn">Commander</div></div>
+          </div>
+        </div>
+        <div class="glow-badge">
+          <div class="mono">Commandes</div>
+          <div class="val">+ clair, + pro</div>
+        </div>
+      </div>-->
+    </div>
+  </section>
+
+  <!-- PROBLEM / SOLUTION -->
+  <section id="solution">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">Le constat</span>
+        <h2>Vendre sur WhatsApp, c'est vite le bazar.</h2>
+        <p>Passé les premières commandes, les messages s'accumulent et le catalogue devient impossible à suivre — pour vous comme pour vos clients.</p>
+      </div>
+      <div class="ps-compare">
+
+        <div class="ps-col bad">
+    
+            <h3>
+                Sans CMD
+                <span class="tag bad">Avant</span>
+            </h3>
+    
+            <ul>
+                <li>Les produits sont envoyés un par un sur WhatsApp</li>
+                <li>Les clients demandent toujours les mêmes informations</li>
+                <li>Les commandes se perdent dans les discussions</li>
+                <li>Difficile de présenter une image professionnelle</li>
+            </ul>
+    
+        </div>
+    
+    
+        <div class="ps-col good">
+    
+            <h3>
+                Avec CMD
+                <span class="tag good">Après</span>
+            </h3>
+    
+            <ul>
+                <li>Une boutique en ligne accessible à tout moment</li>
+                <li>Un catalogue clair avec prix et produits organisés</li>
+                <li>Des commandes mieux structurées via WhatsApp</li>
+                <li>Une image professionnelle qui inspire confiance</li>
+            </ul>
+    
+        </div>
+    
+    </div>
+    </div>
+  </section>
+
+  <!-- LAUNCH VIDEO -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">CMD en mouvement</span>
+        <h2>Le lancement de CMD, en vidéo.</h2>
+      </div>
+      <div class="video-frame">
+
+        <video controls preload="metadata" poster="Capture d’écran, le 2026-07-23 à 20.20.19.png">
+            <source src="CMD.mp4" type="video/mp4">
+        </video>
+    
+    </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo">
+    <div class="wrap">
+      <div class="demo-box">
+        <div>
+          <span class="mono" style="color:var(--orange-light);">Essayez maintenant</span>
+          <h3 style="margin-top:14px;">Une vraie boutique, pas une maquette.</h3>
+          <p>Explorez la démo interactive de CMD : catalogue, fiche produit, avis clients et commande en un clic — exactement ce que vos clients auront entre les mains.</p>
+          <a href="https://moncmd.github.io/" target="_blank" class="btn btn-primary">Ouvrir la démo</a>
+        </div>
+        <div class="demo-visual">
+
+            <video controls>
+                <source src="videodemo.mp4" type="video/mp4">
+            </video>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="advantages">
+
+    <div class="wrap">
+    
+    <div class="section-head">
+        <span class="mono">Pourquoi CMD ?</span>
+    
+        <h2>
+            Vos clients trouvent plus facilement.
+            Vous gérez plus efficacement.
+        </h2>
+    
+        <p>
+            CMD transforme une simple conversation WhatsApp en une expérience de vente organisée,
+            professionnelle et rassurante.
+        </p>
+    </div>
+    
+    
+    <div class="advantages-grid">
+    
+    
+    <!-- CLIENTS -->
+    
+    <div class="adv-card">
+    
+    <div class="adv-label">
+    Pour vos clients
+    </div>
+    
+    <h3>
+    Une expérience d'achat plus simple
+    </h3>
+    
+    
+    <div class="feature">
+    
+    <h4>📦 Catalogue organisé</h4>
+    
+    <p>
+    Vos clients retrouvent vos produits facilement grâce à une boutique claire avec catégories,
+    photos, descriptions et prix visibles.
+    </p>
+    
+    </div>
+    
+    
+    <div class="feature">
+    
+    <h4>💬 FAQ personnalisable</h4>
+    
+    <p>
+    Répondez aux questions fréquentes directement depuis votre boutique :
+    livraison, paiement, disponibilité, conditions...
+    </p>
+    
+    </div>
+    
+    
+    <div class="feature">
+    
+    <h4>⭐ Avis clients</h4>
+    
+    <p>
+    Vos clients peuvent consulter les retours d'autres acheteurs pour acheter avec plus de confiance.
+    </p>
+    
+    </div>
+    
+    
+    <div class="feature">
+    
+    <h4>🛒 Commande simplifiée</h4>
+    
+    <p>
+    Une navigation fluide qui guide le client jusqu'à la commande WhatsApp.
+    </p>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    <!-- VENDEURS -->
+    
+    <div class="adv-card seller">
+    
+    <div class="adv-label">
+    Pour les vendeurs
+    </div>
+    
+    
+    <h3>
+    Un meilleur contrôle de votre activité
+    </h3>
+    
+    
+    <div class="feature">
+    
+    <h4>📊 Gestion des produits</h4>
+    
+    <p>
+    Ajoutez, modifiez et organisez vos produits facilement pour garder votre catalogue toujours à jour.
+    </p>
+    
+    </div>
+    
+    
+    <div class="feature">
+    
+    <h4>📦 Gestion du stock</h4>
+    
+    <p>
+    Évitez les erreurs grâce à un suivi plus clair de vos disponibilités.
+    </p>
+    
+    </div>
+    
+    
+    <div class="feature">
+    
+    <h4>🛡 Avis contrôlés</h4>
+    
+    <p>
+    Gardez une communauté fiable grâce à un système d'avis permettant de limiter les abus et les faux commentaires.
+    </p>
+    
+    </div>
+    
+    
+    <div class="feature">
+    
+    <h4>🚀 Lancement professionnel</h4>
+    
+    <p>
+    Recevez un QR Code et un support visuel pour présenter votre boutique et attirer vos premiers clients.
+    </p>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    </div>
+    
+    </div>
+    
+    </section>
+
+  <!-- PRICING -->
+  <section id="tarifs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">Tarifs</span>
+        <h2>Une formule pour chaque étape de votre boutique.</h2>
+        <p>Commencez simple, évoluez quand vous êtes prêt.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="plan">
+
+            <h4>Standard</h4>
+        
+            <div class="desc">
+                L'essentiel pour lancer votre boutique en ligne.
+            </div>
+        
+            <div class="price">
+                6 000 <small>FCFA le premier mois</small>
+            </div>
+        
+            <p style="color:var(--gray);font-size:.85rem;margin-bottom:20px;">
+                Puis 2 500 FCFA/mois
+            </p>
+        
+            <ul>
+                <li>Boutique en ligne personnalisée</li>
+                <li>Catalogue produits</li>
+                <li>Commande via WhatsApp</li>
+                <li>QR Code de votre boutique</li>
+                <li>Affiche de lancement</li>
+            </ul>
+        
+            <a href="#" class="btn btn-ghost">
+                Choisir Standard
+            </a>
+        
+        </div>
+        <div class="plan featured">
+
+            <span class="badge">Populaire</span>
+        
+            <h4>Pro</h4>
+        
+            <div class="desc">
+                Pour les entreprises qui veulent mieux gérer leurs ventes.
+            </div>
+        
+            <div class="price">
+                10 000 <small>FCFA le premier mois</small>
+            </div>
+        
+            <p style="color:var(--gray);font-size:.85rem;margin-bottom:20px;">
+                Puis 5 000 FCFA/mois
+            </p>
+        
+            <ul>
+                <li>Tout le contenu Standard</li>
+                <li>Tableau de bord administrateur</li>
+                <li>Gestion des produits et prix</li>
+                <li>Avis clients</li>
+                <li>FAQ intégrée</li>
+                <li>QR Code + affiche de lancement</li>
+            </ul>
+        
+            <a href="#" class="btn btn-primary">
+                Choisir Pro
+            </a>
+        
+        </div>
+        <div class="plan soon">
+            <span class="badge soon-badge">Bientôt</span>
+        
+            <h4>Premium</h4>
+        
+            <div class="desc">
+                Des fonctionnalités avancées pour les boutiques en croissance.
+            </div>
+        
+            <div class="price">
+                À venir <small>FCFA</small>
+            </div>
+        
+            <ul>
+                <li>Fonctionnalités avancées</li>
+                <li>Outils supplémentaires de gestion</li>
+                <li>Solutions adaptées aux grandes boutiques</li>
+            </ul>
+        
+            <a class="btn btn-ghost" style="pointer-events:none;">
+                Bientôt disponible
+            </a>
+        </div>
+     
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Prêt à ranger votre catalogue une bonne fois pour toutes ?</h2>
+        <p>Écrivez-nous sur WhatsApp, on vous montre comment CMD s'adapte à votre boutique.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20passer%20%C3%A0%20CMD" class="btn btn-primary">Discuter sur WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-brand"><img src="logo.png" alt="Logo CMD"> © 2026 CMD — Powered by HV</div>
+    <div class="social-links">
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">TikTok</a>
+      <a href="https://wa.me/221784218267" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
