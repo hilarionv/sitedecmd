@@ -158,6 +158,12 @@ section{padding:120px 0;position:relative;}
 /* ADVANTAGES */
 .advantages-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .adv-card{background:white;border:1px solid var(--line);border-radius:24px;padding:40px;}
+.adv-shot{
+    aspect-ratio:16/10;border-radius:14px;border:1px dashed var(--line-strong);background:var(--bg-alt);
+    display:flex;align-items:center;justify-content:center;margin-bottom:24px;overflow:hidden;
+}
+.adv-shot img{width:100%;height:100%;object-fit:cover;}
+.adv-shot span{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray);text-align:center;padding:0 20px;}
 .adv-card.seller{background:rgba(225,91,15,.05);}
 .adv-label{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);font-weight:700;margin-bottom:18px;}
 .adv-card h3{font-size:1.5rem;margin-bottom:32px;}
@@ -355,6 +361,10 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
         <div class="adv-card" data-aos="fade-up">
           <div class="adv-label">Pour vos clients</div>
           <h3>Une expérience d'achat plus simple</h3>
+          <div class="adv-shot">
+   <img src="Capture d’écran, le 2026-07-24 à 10.46.57.png" alt="" srcset="">
+           
+          </div>
           <div class="feature"><h4>📦 Catalogue organisé</h4><p>Vos clients retrouvent vos produits facilement grâce à une boutique claire avec catégories, photos, descriptions et prix visibles.</p></div>
           <div class="feature"><h4>💬 FAQ personnalisable</h4><p>Répondez aux questions fréquentes directement depuis votre boutique : livraison, paiement, disponibilité, conditions...</p></div>
           <div class="feature"><h4>⭐ Avis clients</h4><p>Vos clients peuvent consulter les retours d'autres acheteurs pour acheter avec plus de confiance.</p></div>
@@ -363,6 +373,10 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
         <div class="adv-card seller" data-aos="fade-up" data-aos-delay="150">
           <div class="adv-label">Pour les vendeurs</div>
           <h3>Un meilleur contrôle de votre activité</h3>
+          <div class="adv-shot">
+           <img src="Capture d’écran, le 2026-07-24 à 10.45.13.png" alt="" srcset="">
+          
+          </div>
           <div class="feature"><h4>📊 Gestion des produits</h4><p>Ajoutez, modifiez et organisez vos produits facilement pour garder votre catalogue toujours à jour.</p></div>
           <div class="feature"><h4>📦 Gestion du stock</h4><p>Évitez les erreurs grâce à un suivi plus clair de vos disponibilités.</p></div>
           <div class="feature"><h4>🛡 Avis contrôlés</h4><p>Gardez une communauté fiable grâce à un système d'avis permettant de limiter les abus et les faux commentaires.</p></div>
@@ -438,7 +452,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
     </div>
     <div class="marquee" data-aos="fade-up">
       <div class="marquee-track">
-        <!-- Témoignages à remplacer par les vrais avis collectés -->
+        <!-- Témoignages à remplacer par les vrais avis collectés. Pour une vraie photo, remplacer <div class="t-avatar"></div> par <img class="t-avatar" src="photo.jpg"> -->
         <div class="t-card"><div class="stars">★★★★★</div><p>"Depuis que j'utilise CMD, mes clients ne me redemandent plus les prix en boucle. Tout est clair."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeuse test 1</div><div class="role">Boutique mode</div></div></div></div>
         <div class="t-card"><div class="stars">★★★★★</div><p>"La mise en place a été rapide et mes commandes sont beaucoup mieux organisées qu'avant."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeur test 2</div><div class="role">Accessoires</div></div></div></div>
         <div class="t-card"><div class="stars">★★★★★</div><p>"Le QR Code de lancement m'a permis d'avoir mes premiers clients dès la première semaine."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeuse test 3</div><div class="role">Cosmétiques</div></div></div></div>
