@@ -264,6 +264,16 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
     }
 
 }
+
+
+@media(max-width:480px){
+
+.hero video{
+    object-fit:cover;
+    transform:none;
+}
+
+}
 </style>
 </head>
 <body>
@@ -289,9 +299,17 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
 <main>
   <!-- HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="Video_1-2.mp4" type="video/mp4">
-    </video>
+    <video class="hero-video desktop-video" autoplay muted loop playsinline>
+
+      <source src="Video_1-2.mp4" type="video/mp4">
+
+  </video>
+
+  <video class="hero-video mobile-video" autoplay muted loop playsinline>
+
+      <source src="Video_2.mp4" type="video/mp4">
+
+  </video>
     <div class="hero-overlay"></div>
     <div class="wrap hero-grid">
       <div data-aos="fade-up">
