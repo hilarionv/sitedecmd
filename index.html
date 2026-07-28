@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CMD — Votre boutique en ligne, sans le chaos de WhatsApp</title>
 <meta name="description" content="CMD transforme votre catalogue WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
+<meta property="og:title" content="CMD — Votre boutique en ligne, sans le chaos de WhatsApp">
+<meta property="og:description" content="CMD transforme votre catalogue WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
+<meta property="og:image" content="https://www.moncmd.site/og-image.jpg">
+<meta property="og:url" content="https://www.moncmd.site/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -274,6 +280,21 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
 }
 
 }
+
+
+.compare-link{background:none;border:none;color:var(--orange);font-weight:600;font-size:0.9rem;cursor:pointer;margin-top:12px;text-decoration:underline;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;border-radius:16px;padding:32px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;position:relative;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.2rem;cursor:pointer;}
+.table-scroll{overflow-x:auto;margin-top:20px;}
+table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+th,td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:center;}
+td:first-child,th:first-child{text-align:left;}
+th{color:var(--orange);font-weight:600;}
+
+
+
 </style>
 </head>
 <body>
@@ -429,6 +450,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
   <section id="tarifs">
     <div class="wrap">
       <div class="section-head" data-aos="fade-up">
+        <button class="compare-link" onclick="document.getElementById('compare-modal').classList.add('open')">Comparer les formules en détail →</button>
         <span class="mono">Tarifs</span>
         <h2>Une formule pour chaque étape de votre boutique.</h2>
         <p>Commencez simple, évoluez quand vous êtes prêt.</p>
@@ -440,14 +462,14 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
           <div class="price"><strong>2 500 FCFA/mois</strong></div>
           <p class="fee-note">6 000 FCFA à l'inscription, premier mois inclus</p>
           <ul>
-            <li>Boutique en ligne personnalisée</li>
-            <li>Catalogue produits</li>
-            <li>Tableau de bord administrateur limité</li>
+            <li>Jusqu'à 5 catégories, 20 produits</li>
+            <li>FAQ (5 questions max)</li>
+            <li>10 derniers avis affichés</li>
             <li>Commande via WhatsApp</li>
             <li>QR Code de votre boutique</li>
             <li>Affiche de lancement</li>
           </ul>
-          <a href="#" class="btn btn-ghost">Choisir Standard</a>
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Standard%20CMD" class="btn btn-ghost">Choisir Standard</a>
         </div>
         <div class="plan featured" data-aos="fade-up" data-aos-delay="120">
           <span class="badge">Populaire</span>
@@ -456,30 +478,55 @@ footer{border-top:1px solid var(--line);padding:40px 0;}
           <div class="price"><strong>5 000 FCFA/mois</strong></div>
           <p class="fee-note">10 000 FCFA à l'inscription, premier mois inclus</p>
           <ul>
-            <li>Tout le contenu Standard</li>
-            <li>Tableau de bord administrateur</li>
-            <li>Gestion des produits et prix</li>
-            <li>Avis clients</li>
-            <li>FAQ intégrée</li>
+            <li>Catégories, produits, FAQ et avis illimités</li>
+            <li>Statistiques avancées (panier moyen, top produits, graphiques)</li>
+            <li>Gestion de stock</li>
+            <li>Suivi de vos dépenses</li>
             <li>QR Code + affiche de lancement</li>
           </ul>
-          <a href="#" class="btn btn-primary">Choisir Pro</a>
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Pro%20CMD" class="btn btn-primary">Choisir Pro</a>
         </div>
         <div class="plan soon" data-aos="fade-up" data-aos-delay="240">
           <span class="badge soon-badge">Bientôt</span>
           <h4>Premium</h4>
           <div class="desc">Des fonctionnalités avancées pour les boutiques en croissance.</div>
-          <div class="price">À venir <strong>FCFA</strong></div>
+          <div class="price"> <strong>FCFA</strong></div>
+          <p class="fee-note">15 000 FCFA à l'inscription, premier mois inclus</p>
           <ul>
-            <li>Fonctionnalités avancées</li>
-            <li>Outils supplémentaires de gestion</li>
-            <li>Solutions adaptées aux grandes boutiques</li>
+            <li>Tout Pro, en plus</li>
+            <li>Bénéfice net calculé automatiquement (ventes − dépenses)</li>
+            <li>Facture PDF pour vous et vos clients</li>
+            <li>Export Excel de vos chiffres (CA, stock)</li>
           </ul>
           <a class="btn btn-ghost" style="pointer-events:none;">Bientôt disponible</a>
         </div>
       </div>
     </div>
   </section>
+
+  <div id="compare-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('compare-modal').classList.remove('open')">✕</button>
+      <h3>Comparatif des formules</h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Fonctionnalité</th><th>Standard</th><th>Pro</th><th>Premium</th></tr></thead>
+          <tbody>
+            <tr><td>Catalogue, panier, commande WhatsApp</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Catégories / Produits</td><td>5 / 20 max</td><td>Illimité</td><td>Illimité</td></tr>
+            <tr><td>FAQ</td><td>5 max</td><td>Illimité</td><td>Illimité</td></tr>
+            <tr><td>Avis clients</td><td>10 derniers</td><td>Illimité</td><td>Illimité</td></tr>
+            <tr><td>Stats avancées</td><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Gestion de stock</td><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Suivi des dépenses</td><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Bénéfice net</td><td>—</td><td>—</td><td>✓</td></tr>
+            <tr><td>Export PDF</td><td>—</td><td>—</td><td>✓</td></tr>
+            <tr><td>Export Excel</td><td>—</td><td>—</td><td>✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
   <!-- TESTIMONIALS -->
   <section class="testimonials">
