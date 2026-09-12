@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CMD — Votre boutique en ligne, sans le chaos de WhatsApp</title>
-<meta name="description" content="CMD transforme votre catalogue WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
-<meta property="og:title" content="CMD — Votre boutique en ligne, sans le chaos de WhatsApp">
-<meta property="og:description" content="CMD transforme votre catalogue WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
+<title>CMD — Votre boutique ou vos rendez-vous en ligne, sans le chaos de WhatsApp</title>
+<meta name="description" content="CMD transforme votre catalogue ou votre prise de rendez-vous WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
+<meta property="og:title" content="CMD — Votre boutique ou vos rendez-vous en ligne, sans le chaos de WhatsApp">
+<meta property="og:description" content="CMD transforme votre catalogue ou votre prise de rendez-vous WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
 <meta property="og:image" content="https://www.moncmd.site/og-image.jpg">
 <meta property="og:url" content="https://www.moncmd.site/">
 <meta property="og:type" content="website">
@@ -186,14 +186,15 @@ section{padding:120px 0;position:relative;}
     display:flex;gap:24px;width:max-content;
     animation:showcase-scroll 32s linear infinite;
 }
-.showcase-marquee-wrapper:hover .showcase-marquee-track{animation-play-state:paused;}
+/* Le défilement ne se met plus en pause au survol/toucher — sur mobile,
+   le hover reste "collé" après un tap et bloquait l'animation en continu. */
 @keyframes showcase-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .showcase-item{
-    flex:0 0 auto;width:340px;aspect-ratio:4/5;border-radius:20px;overflow:hidden;
+    flex:0 0 auto;width:280px;aspect-ratio:9/18;border-radius:20px;overflow:hidden;
     box-shadow:0 12px 32px rgba(0,0,0,.10);background:var(--card);
 }
 .showcase-item img{width:100%;height:100%;object-fit:cover;display:block;}
-@media(max-width:600px){.showcase-item{width:230px;}}
+@media(max-width:600px){.showcase-item{width:190px;}}
 .feature{padding:18px 0;border-bottom:1px solid var(--line);}
 .feature:last-child{border-bottom:none;}
 .feature h4{font-size:1rem;margin-bottom:8px;}
@@ -201,6 +202,9 @@ section{padding:120px 0;position:relative;}
 @media(max-width:800px){.advantages-grid{grid-template-columns:1fr;} .adv-card{padding:28px;}}
 
 /* PRICING */
+.pricing-toggle{display:inline-flex;gap:6px;background:var(--bg-alt);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:20px;}
+.pt-btn{background:none;border:none;padding:9px 20px;border-radius:999px;font-weight:600;font-size:0.88rem;color:var(--gray);cursor:pointer;transition:all .2s;}
+.pt-btn.active{background:var(--orange);color:#fff;}
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 @media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.pricing-grid{grid-template-columns:1fr;}}
@@ -331,6 +335,7 @@ th{color:var(--orange);font-weight:600;}
     </div>
     <div class="nav-links">
       <a href="#solution">Solution</a>
+      <a href="#presta">Prestataires</a>
       <a href="#demo">Démo</a>
       <a href="#tarifs">Tarifs</a>
       <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20CMD" class="nav-cta">Contactez-nous</a>
@@ -356,7 +361,7 @@ th{color:var(--orange);font-weight:600;}
     <div class="wrap hero-grid">
       <div data-aos="fade-up">
         <h1>Votre catalogue mérite mieux <em>qu'un fil WhatsApp.</em></h1>
-        <p class="lead">Une boutique en ligne pensée pour les vendeurs qui veulent vendre plus simplement, mieux organiser leurs produits et offrir une meilleure expérience à leurs clients.</p>
+        <p class="lead">Une boutique en ligne ou un système de prise de rendez-vous, pensés pour les vendeurs et prestataires qui veulent vendre plus simplement, mieux s'organiser et offrir une meilleure expérience à leurs clients.</p>
         <div class="cta-row">
           <a href="#demo" class="btn btn-primary">Voir la démo</a>
           <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20CMD" class="btn btn-ghost hero-contact">Contactez-nous</a>
@@ -417,9 +422,9 @@ th{color:var(--orange);font-weight:600;}
       <div class="demo-box">
         <div data-aos="fade-right">
           <span class="mono" style="color:var(--orange-light);">Essayez maintenant</span>
-          <h3 style="margin-top:14px;">Une vraie boutique, pas une maquette.</h3>
-          <p>Explorez la démo interactive de CMD : catalogue, fiche produit, avis clients et commande en un clic — exactement ce que vos clients auront entre les mains.</p>
-          <a href="https://moncmd.github.io/" target="_blank" class="btn btn-primary">Ouvrir la démo</a>
+          <h3 style="margin-top:14px;">Une vraie boutique — ou un vrai système de rendez-vous. Pas une maquette.</h3>
+          <p>Explorez la démo interactive de CMD, côté vente (catalogue, fiche produit, avis clients, commande en un clic) ou côté service (prestations, choix du prestataire, prise de rendez-vous) — exactement ce que vos clients auront entre les mains.</p>
+          <button onclick="document.getElementById('demo-modal').classList.add('open')" class="btn btn-primary">Ouvrir la démo</button>
         </div>
         <div class="demo-visual" data-aos="fade-left">
             <video controls poster="IMG_7039.PNG">
@@ -459,6 +464,41 @@ th{color:var(--orange);font-weight:600;}
     </div>
   </section>
 
+  <!-- ADVANTAGES — PRESTATAIRES DE SERVICES -->
+  <section class="advantages" id="presta" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="section-head" data-aos="fade-up">
+        <span class="mono">Vous êtes prestataire de services ?</span>
+        <h2>Coiffure, beauté, bien-être : vos rendez-vous, sans y passer vos journées sur WhatsApp.</h2>
+        <p>CMD s'adapte aussi aux prestataires : vos clients réservent en ligne, vous gardez le contrôle de votre agenda.</p>
+      </div>
+      <div class="advantages-grid">
+        <div class="adv-card" data-aos="fade-up">
+          <div class="adv-shot">
+            <!-- Vidéo/capture prestataire à ajouter ici (remplacer ce bloc par
+                 <video autoplay muted loop playsinline><source src="video-presta.mp4" type="video/mp4"></video>
+                 ou une image de la prise de rendez-vous) -->
+            <span>Vidéo de la prise de rendez-vous — à ajouter</span>
+          </div>
+          <div class="adv-label">Pour vos clients</div>
+          <h3>Réserver en un instant</h3>
+          <div class="feature"><h4>📅 Réservation en ligne</h4><p>Vos clients choisissent la prestation, la date et l'heure qui leur conviennent, sans avoir à vous écrire pour vérifier vos disponibilités.</p></div>
+          <div class="feature"><h4>💇 Choix du prestataire</h4><p>S'ils ont une préférence pour une personne de votre équipe, ils peuvent la sélectionner directement — sinon, le premier créneau libre leur suffit.</p></div>
+          <div class="feature"><h4>🖼 Galerie de réalisations</h4><p>Vos clients voient vos réalisations avant de réserver, pour choisir en confiance.</p></div>
+          <div class="feature"><h4>⭐ Avis clients</h4><p>Les retours d'autres clients rassurent avant la prise de rendez-vous.</p></div>
+        </div>
+        <div class="adv-card seller" data-aos="fade-up" data-aos-delay="150">
+          <div class="adv-label">Pour vous, prestataire</div>
+          <h3>Un agenda qui se remplit tout seul</h3>
+          <div class="feature"><h4>🗓 Gestion de votre agenda</h4><p>Toutes vos réservations centralisées, avec vos horaires et jours de fermeture pris en compte automatiquement.</p></div>
+          <div class="feature"><h4>👥 Votre équipe en ligne</h4><p>Ajoutez vos prestataires, chacun avec ses propres prestations et disponibilités.</p></div>
+          <div class="feature"><h4>💼 Boutique + prestations</h4><p>Vous vendez aussi des produits (soins, accessoires) ? Le mode hybride combine boutique et réservation sur une seule page.</p></div>
+          <div class="feature"><h4>🚀 Lancement professionnel</h4><p>Même QR Code et affiche de lancement que pour une boutique, adaptés à votre activité.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SHOWCASE PHOTOS — défilement horizontal automatique -->
   <section class="photo-showcase">
     <div class="wrap">
@@ -469,25 +509,25 @@ th{color:var(--orange);font-weight:600;}
     </div>
     <div class="showcase-marquee-wrapper">
       <div class="showcase-marquee-track" id="showcase-track">
-        <div class="showcase-item"><img src="showcase-1.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-2.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-3PNG.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-4.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-5.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-6.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-7.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-8.PNG" alt=""></div>
-        <div class="showcase-item"><img src="showcase-9.PNG" alt=""></div>
+        <div class="showcase-item"><img src="showcase-1.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-2.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-3.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-4.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-5.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-6.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-7.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-8.png" alt=""></div>
+        <div class="showcase-item"><img src="showcase-9.png" alt=""></div>
         <!-- Duplication pour la boucle infinie sans coupure visible -->
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-1.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-2.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-3PNG.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-4.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-5.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-6.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-7.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-8.PNG" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-9.PNG" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-1.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-2.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-3.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-4.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-5.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-6.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-7.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-8.png" alt=""></div>
+        <div class="showcase-item" aria-hidden="true"><img src="showcase-9.png" alt=""></div>
       </div>
     </div>
   </section>
@@ -498,10 +538,14 @@ th{color:var(--orange);font-weight:600;}
       <div class="section-head" data-aos="fade-up">
         <button class="compare-link" onclick="document.getElementById('compare-modal').classList.add('open')">Comparer les formules en détail →</button>
         <span class="mono">Tarifs</span>
-        <h2>Une formule pour chaque étape de votre boutique.</h2>
+        <h2>Une formule pour chaque étape de votre activité.</h2>
         <p>Commencez simple, évoluez quand vous êtes prêt.</p>
+        <div class="pricing-toggle">
+          <button id="toggle-boutique" class="pt-btn active" onclick="basculerTarifs('boutique')">Boutique</button>
+          <button id="toggle-presta" class="pt-btn" onclick="basculerTarifs('presta')">Prestataires</button>
+        </div>
       </div>
-      <div class="pricing-grid">
+      <div class="pricing-grid" id="pricing-boutique">
         <div class="plan" data-aos="fade-up">
           <h4>Standard</h4>
           <div class="desc">L'essentiel pour lancer votre boutique en ligne.</div>
@@ -547,6 +591,54 @@ th{color:var(--orange);font-weight:600;}
           <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Premium%20CMD" class="btn btn-primary">Choisir Premium</a>
         </div>
       </div>
+
+      <!-- Tarifs prestataires : prix provisoires à confirmer avant mise en ligne -->
+      <div class="pricing-grid" id="pricing-presta" style="display:none;">
+        <div class="plan" data-aos="fade-up">
+          <h4>Standard</h4>
+          <div class="desc">L'essentiel pour démarrer la prise de rendez-vous en ligne.</div>
+          <div class="price"><strong>6 000 FCFA/mois</strong></div>
+          <p class="fee-note">[FRAIS D'INSCRIPTION À CONFIRMER], premier mois inclus</p>
+          <ul>
+            <li>Jusqu'à 5 prestations</li>
+            <li>1 prestataire</li>
+            <li>FAQ (5 questions max)</li>
+            <li>10 derniers avis affichés</li>
+            <li>Réservation via WhatsApp</li>
+            <li>QR Code + affiche de lancement</li>
+          </ul>
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Standard%20Prestataire%20CMD" class="btn btn-ghost">Choisir Standard</a>
+        </div>
+        <div class="plan featured" data-aos="fade-up" data-aos-delay="120">
+          <span class="badge">Populaire</span>
+          <h4>Pro</h4>
+          <div class="desc">Pour les prestataires qui gèrent une équipe.</div>
+          <div class="price"><strong>12 000 FCFA/mois</strong></div>
+          <p class="fee-note">[FRAIS D'INSCRIPTION À CONFIRMER], premier mois inclus</p>
+          <ul>
+            <li>Prestations, FAQ et avis illimités</li>
+            <li>Équipe illimitée (plusieurs prestataires)</li>
+            <li>Gestion des horaires et jours de fermeture</li>
+            <li>Statistiques de rendez-vous</li>
+            <li>QR Code + affiche de lancement</li>
+          </ul>
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Pro%20Prestataire%20CMD" class="btn btn-primary">Choisir Pro</a>
+        </div>
+        <div class="plan soon" data-aos="fade-up" data-aos-delay="240">
+          <span class="badge soon-badge">Bientôt</span>
+          <h4>Premium</h4>
+          <div class="desc">Boutique + prestations réunies sur une seule page (mode hybride).</div>
+          <div class="price"><strong>[PRIX À CONFIRMER]</strong></div>
+          <p class="fee-note">[FRAIS D'INSCRIPTION À CONFIRMER], premier mois inclus</p>
+          <ul>
+            <li>Tout Pro, en plus</li>
+            <li>Mode hybride : boutique + réservation</li>
+            <li>Statistiques avancées</li>
+            <li>Export Excel de vos rendez-vous</li>
+          </ul>
+          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Premium%20Prestataire%20CMD" class="btn btn-primary">Choisir Premium</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -570,6 +662,20 @@ th{color:var(--orange);font-weight:600;}
             <tr><td>Export Excel</td><td>—</td><td>—</td><td>✓</td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Choix de la démo : boutique ou prestataire, même mécanique de modale
+       que le comparatif des formules ci-dessus -->
+  <div id="demo-modal" class="modal-overlay">
+    <div class="modal-box" style="max-width:480px;">
+      <button class="modal-close" onclick="document.getElementById('demo-modal').classList.remove('open')">✕</button>
+      <h3>Quelle démo voulez-vous voir ?</h3>
+      <p style="margin:8px 0 22px;color:var(--gray);">Le fonctionnement change selon votre activité — choisissez celle qui vous correspond.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <a href="https://moncmd.github.io/" target="_blank" class="btn btn-primary" style="width:100%;box-sizing:border-box;text-align:center;">🛍 Démo boutique</a>
+        <a href="https://moncmd.github.io/index-prestations-editorial.html" target="_blank" class="btn" style="width:100%;box-sizing:border-box;text-align:center;border:1.5px solid var(--line-strong);color:var(--white);background:none;">📅 Démo prestataire</a>
       </div>
     </div>
   </div>
@@ -603,7 +709,7 @@ th{color:var(--orange);font-weight:600;}
     <div class="wrap">
       <div class="cta-band" data-aos="zoom-in">
         <h2>Prêt à ranger votre catalogue une bonne fois pour toutes ?</h2>
-        <p>Écrivez-nous sur WhatsApp, on vous montre comment CMD s'adapte à votre boutique.</p>
+        <p>Écrivez-nous sur WhatsApp, on vous montre comment CMD s'adapte à votre activité.</p>
         <div class="cta-row">
           <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20passer%20%C3%A0%20CMD" class="btn btn-primary">Discuter sur WhatsApp</a>
         </div>
@@ -628,6 +734,16 @@ th{color:var(--orange);font-weight:600;}
           <p>Non. Vous gérez tout depuis votre tableau de bord, aussi simplement que vous géreriez vos réseaux sociaux.</p>
         </details>
 
+        <div class="faq-cat">Prestataires de services</div>
+        <details class="faq-item">
+          <summary>Comment mes clients prennent-ils rendez-vous ?</summary>
+          <p>Ils choisissent la prestation, éventuellement la personne de votre équipe, puis une date et un créneau libre. La demande arrive directement sur votre WhatsApp.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je gérer plusieurs prestataires ?</summary>
+          <p>Oui, avec la formule Pro. Chaque prestataire a ses propres prestations et créneaux.</p>
+        </details>
+
         <div class="faq-cat">Paiements</div>
         <details class="faq-item">
           <summary>Comment mes clients paient-ils ?</summary>
@@ -637,11 +753,11 @@ th{color:var(--orange);font-weight:600;}
         <div class="faq-cat">Fonctionnalités</div>
         <details class="faq-item">
           <summary>C'est quoi le FAQ personnalisable ?</summary>
-          <p>Vous répondez vous-même aux questions que vos clients vous posent le plus (livraison, disponibilité, horaires...) directement sur votre boutique — ils n'ont plus besoin de vous écrire pour le savoir.</p>
+          <p>Vous répondez vous-même aux questions que vos clients vous posent le plus (livraison, disponibilité, horaires...) directement sur votre boutique ou votre page de réservation — ils n'ont plus besoin de vous écrire pour le savoir.</p>
         </details>
         <details class="faq-item">
           <summary>Comment fonctionnent les avis clients ?</summary>
-          <p>Vos clients laissent leur avis après achat. Vous validez chaque avis avant qu'il soit publié, pour garder une boutique fiable et éviter les faux commentaires.</p>
+          <p>Vos clients laissent leur avis après achat ou rendez-vous. Vous validez chaque avis avant qu'il soit publié, pour garder une activité fiable et éviter les faux commentaires.</p>
         </details>
         <details class="faq-item">
           <summary>Est-ce que je peux suivre mon stock ?</summary>
@@ -681,6 +797,13 @@ th{color:var(--orange);font-weight:600;}
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 <script>
+  function basculerTarifs(quel) {
+    document.getElementById('pricing-boutique').style.display = quel === 'boutique' ? 'grid' : 'none';
+    document.getElementById('pricing-presta').style.display = quel === 'presta' ? 'grid' : 'none';
+    document.getElementById('toggle-boutique').classList.toggle('active', quel === 'boutique');
+    document.getElementById('toggle-presta').classList.toggle('active', quel === 'presta');
+  }
+
   AOS.init({
     duration: 700,
     once: true,
