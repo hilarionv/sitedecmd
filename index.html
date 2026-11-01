@@ -53,7 +53,7 @@ section{padding:96px 0;}
 
 /* En-tête */
 header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--trait);}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px;max-width:1160px;margin:0 auto;}
+header nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px;max-width:1160px;margin:0 auto;}
 .marque{display:flex;align-items:center;gap:10px;}
 .marque img{width:34px;height:34px;border-radius:8px;}
 .marque .nom{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.1rem;line-height:1;}
@@ -170,6 +170,8 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;paddi
 .formule li{padding-left:24px;position:relative;}
 .formule li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800;}
 .formule .btn{margin-top:auto;width:100%;}
+.mise-en-place-note{margin-top:22px;max-width:640px;color:var(--gris);font-size:.95rem;}
+.mise-en-place-note strong{color:var(--encre);}
 .lien-comparer{margin-top:28px;background:none;border:none;font:inherit;font-weight:700;color:var(--orange);cursor:pointer;text-decoration:underline;text-underline-offset:4px;}
 .tableau-wrap{overflow-x:auto;margin-top:24px;display:none;}
 .tableau-wrap.ouvert{display:block;}
@@ -207,13 +209,26 @@ details p{padding:0 0 18px;color:var(--gris);}
 footer{padding:40px 0;border-top:1px solid var(--trait);font-size:.9rem;color:var(--gris);}
 .pied{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
 .pied .marque img{width:28px;height:28px;}
-.pied nav{padding:0;gap:22px;margin:0;}
+.pied nav{display:flex;flex-wrap:wrap;gap:10px 20px;}
 
 @media(max-width:640px){
   section{padding:68px 0;}
-  .wrap,nav{padding-left:20px;padding-right:20px;}
+  .wrap,header nav{padding-left:20px;padding-right:20px;}
   .porte,.formule{padding:26px 22px;}
   .final{padding:48px 22px;}
+}
+@media(max-width:640px){
+  .hero{min-height:auto;padding:104px 0 56px;}
+  .hero h1{font-size:1.75rem;line-height:1.15;margin-bottom:12px;}
+  .hero .chapo{font-size:.93rem;line-height:1.55;margin-bottom:20px;}
+  .hero .reassurance{font-size:.82rem;margin-top:14px;}
+  .hero .rangee-cta{gap:10px;}
+  .hero .btn{padding:11px 16px;font-size:.88rem;}
+  h2{font-size:1.6rem;}
+  .section-head{margin-bottom:32px;}
+  .section-head p{font-size:.98rem;}
+  .porte h3{font-size:1.35rem;}
+  .formule .prix{font-size:1.7rem;}
 }
 @media(max-width:480px){
   .btn-nav{padding:9px 14px;font-size:.82rem;white-space:nowrap;}
@@ -455,6 +470,7 @@ footer{padding:40px 0;border-top:1px solid var(--trait);font-size:.9rem;color:va
       <div class="grille-prix" id="grille-prix"></div>
       <button class="lien-comparer" id="btn-comparer" type="button" aria-expanded="false" aria-controls="tableau-comparatif">Comparer les formules en détail</button>
       <div class="tableau-wrap" id="tableau-comparatif"></div>
+      <p class="mise-en-place-note"><strong>Pas le temps de tout installer&nbsp;?</strong> Avec la mise en place par CMD (10&nbsp;000 FCFA, une fois), on ajoute vos produits, on règle l'apparence de votre boutique et on prépare votre affiche de lancement.</p>
     </div>
   </section>
 
@@ -472,7 +488,7 @@ footer{padding:40px 0;border-top:1px solid var(--trait);font-size:.9rem;color:va
         <h3>Démarrer</h3>
         <details open data-si-inscription><summary>Comment je crée ma boutique&nbsp;?</summary><p>Cliquez sur «&nbsp;Créer ma boutique&nbsp;», choisissez votre activité, le nom et l'adresse de votre boutique, votre numéro WhatsApp, puis votre email et un mot de passe. Vous arrivez directement dans votre tableau de bord.</p></details>
         <details><summary>Est-ce que j'ai besoin de compétences techniques&nbsp;?</summary><p>Non. Tout se gère depuis votre téléphone, aussi simplement que vos réseaux sociaux.</p></details>
-        <details data-si-inscription><summary>Que se passe-t-il après les 14 jours d'essai&nbsp;?</summary><p>Votre boutique reste en ligne et passe en formule Standard. Pour garder Pro ou Premium, écrivez-nous sur WhatsApp depuis le bouton de votre tableau de bord.</p></details>
+        <details data-si-inscription><summary>Que se passe-t-il après les 14 jours d'essai&nbsp;?</summary><p>Choisissez votre formule et payez par Wave ou Orange Money depuis «&nbsp;Mon abonnement&nbsp;», dans votre tableau de bord. Sans paiement, votre boutique est mise en pause : vos clients ne la voient plus, mais rien n'est supprimé. Elle revient dès que votre paiement est validé.</p></details>
         <details><summary>J'ai oublié mon mot de passe.</summary><p>Sur la page de connexion, écrivez votre email puis cliquez sur «&nbsp;Mot de passe oublié&nbsp;?&nbsp;». Vous recevez un lien pour en choisir un nouveau.</p></details>
 
         <h3>Commandes et rendez-vous</h3>
@@ -487,7 +503,7 @@ footer{padding:40px 0;border-top:1px solid var(--trait);font-size:.9rem;color:va
 
         <h3>Formules</h3>
         <details><summary>Quelle différence entre Standard, Pro et Premium&nbsp;?</summary><p>Standard couvre l'essentiel pour démarrer. Pro retire les limites et ajoute le stock, les statistiques et le suivi des dépenses. Premium ajoute le bénéfice net, les codes promo, les reçus PDF et l'export de vos commandes. Le détail est dans le comparatif des tarifs.</p></details>
-        <details><summary>Puis-je changer de formule plus tard&nbsp;?</summary><p>Oui, à tout moment. Écrivez-nous sur WhatsApp et le changement est fait le jour même.</p></details>
+        <details><summary>Puis-je changer de formule plus tard&nbsp;?</summary><p>Oui, à tout moment, depuis « Mon abonnement » dans votre tableau de bord. Le changement est activé dès que votre paiement est validé, en général sous 24 h.</p></details>
         <details><summary>Suis-je engagé sur une longue durée&nbsp;?</summary><p>Non, le paiement est mensuel. Vous restez libre d'arrêter quand vous voulez.</p></details>
       </div>
     </div>
@@ -538,7 +554,7 @@ const WHATSAPP = '221784218267';
 const INSCRIPTION_OUVERTE = true;
 
 // Frais de mise en service : mets false pour les masquer partout.
-const AFFICHER_FRAIS = true;
+const AFFICHER_FRAIS = false;
 
 const LIENS = {
   'inscription': APP + '/inscription.html',
@@ -555,21 +571,21 @@ const FORMULES = {
   boutique: [
     { nom: 'Standard', prix: 2500, frais: 6000,
       desc: "L'essentiel pour lancer votre boutique en ligne.",
-      points: ["Jusqu'à 20 produits et 5 catégories", "FAQ : 5 questions", "Les 10 derniers avis affichés", "Commande via WhatsApp, paiement Wave ou Orange Money", "QR Code et affiche de lancement"] },
+      points: ["Jusqu'à 20 produits et 5 catégories", "FAQ : 5 questions", "Les 10 derniers avis affichés", "Commande via WhatsApp, paiement Wave ou Orange Money", "Votre style : modèle, couleur, bandeau d'annonce", "QR Code et affiche de lancement"] },
     { nom: 'Pro', prix: 5000, frais: 10000, populaire: true,
       desc: "Pour mieux gérer vos ventes au quotidien.",
-      points: ["Produits, catégories et FAQ illimités", "Les 30 derniers avis affichés", "Statistiques avancées : panier moyen, top produits, graphique sur 7 jours", "Gestion du stock et liste d'attente de réassort", "Suivi de vos dépenses"] },
+      points: ["Produits, catégories et FAQ illimités", "Les 30 derniers avis affichés", "Statistiques avancées : panier moyen, top produits, graphique sur 7 jours", "Gestion du stock et liste d'attente de réassort", "Suivi de vos dépenses", "Personnalisation avancée : police, fond, bannière, à propos"] },
     { nom: 'Premium', prix: 10000, frais: 15000,
       desc: "Pour les boutiques qui ont déjà du volume.",
-      points: ["Tout Pro, en plus :", "Bénéfice net calculé automatiquement", "Codes promo pour vos clients", "Reçu PDF à chaque commande", "Export de vos commandes (Excel)", "Message d'accueil en haut de votre boutique"] }
+      points: ["Tout Pro, en plus :", "Bénéfice net calculé automatiquement", "Codes promo pour vos clients", "Reçu PDF à chaque commande", "Export de vos commandes (Excel)", "Message d'accueil en haut de votre boutique", "Bannière avec photo, sans mention CMD"] }
   ],
   prestation: [
     { nom: 'Standard', prix: 6000, frais: 11000,
       desc: "L'essentiel pour prendre vos rendez-vous en ligne.",
-      points: ["Jusqu'à 20 prestations", "Agenda, horaires et jours de fermeture", "Galerie de réalisations", "FAQ : 5 questions", "Les 10 derniers avis affichés", "QR Code et affiche de lancement"] },
+      points: ["Jusqu'à 20 prestations", "Agenda, horaires et jours de fermeture", "Galerie de réalisations", "Votre style : modèle, couleur, bandeau d'annonce", "FAQ : 5 questions", "Les 10 derniers avis affichés", "QR Code et affiche de lancement"] },
     { nom: 'Pro', prix: 12000, frais: 17000, populaire: true,
       desc: "Pour les prestataires qui travaillent en équipe.",
-      points: ["Jusqu'à 50 prestations", "Équipe : jusqu'à 5 personnes", "Blocage de créneaux précis", "FAQ illimitée, les 30 derniers avis affichés", "Suivi de vos dépenses"] },
+      points: ["Jusqu'à 50 prestations", "Équipe : jusqu'à 5 personnes", "Blocage de créneaux précis", "FAQ illimitée, les 30 derniers avis affichés", "Suivi de vos dépenses", "Personnalisation avancée : police, fond, à propos"] },
     // visible: false → carte et colonne du comparatif masquées. Passe à true
     // (et mets un prix) le jour où tu proposes Premium aux prestataires.
     { nom: 'Premium', prix: null, frais: null, visible: false,
@@ -592,7 +608,10 @@ const COMPARATIF = {
     ["Bénéfice net", false, false, true],
     ["Codes promo", false, false, true],
     ["Reçu PDF", false, false, true],
-    ["Export des commandes", false, false, true]
+    ["Export des commandes", false, false, true],
+    ["Modèle, couleur, bandeau d'annonce", true, true, true],
+    ["Police, fond, bannière, à propos", false, true, true],
+    ["Photo de bannière, sans mention CMD", false, false, true]
   ],
   prestation: [
     ["Réservation en ligne, demande WhatsApp", true, true, true],
@@ -604,7 +623,9 @@ const COMPARATIF = {
     ["Blocage de créneaux précis", false, true, true],
     ["Suivi des dépenses", false, true, true],
     ["Bénéfice net", false, false, true],
-    ["Mode hybride boutique + réservation", false, false, true]
+    ["Mode hybride boutique + réservation", false, false, true],
+    ["Modèle, couleur, bandeau d'annonce", true, true, true],
+    ["Police, fond, à propos", false, true, true]
   ]
 };
 
@@ -636,7 +657,7 @@ document.querySelectorAll('[data-lien]').forEach((a) => {
 function afficherTarifs(activite) {
   const lienInscription = activite === 'prestation' ? LIENS['inscription-prestation'] : LIENS['inscription'];
   document.getElementById('essai-note').textContent = INSCRIPTION_OUVERTE
-    ? (activite === 'prestation' ? 'Chaque nouvelle page commence par 14 jours en Pro, offerts.' : 'Chaque nouvelle boutique commence par 14 jours en Premium, offerts.')
+    ? (activite === 'prestation' ? '14 jours d’essai gratuit en Pro. Ensuite : 6 mois = 1 mois offert, 12 mois = 2 mois offerts.' : '14 jours d’essai gratuit en Premium. Ensuite : 6 mois = 1 mois offert, 12 mois = 2 mois offerts.')
     : '';
   const indexVisibles = FORMULES[activite].map((f, i) => f.visible === false ? -1 : i).filter((i) => i >= 0);
   const formules = indexVisibles.map((i) => FORMULES[activite][i]);
