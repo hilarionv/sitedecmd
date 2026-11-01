@@ -4,396 +4,320 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CMD — Votre boutique ou vos rendez-vous en ligne, sans le chaos de WhatsApp</title>
-<meta name="description" content="CMD transforme votre catalogue ou votre prise de rendez-vous WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
-<meta property="og:title" content="CMD — Votre boutique ou vos rendez-vous en ligne, sans le chaos de WhatsApp">
-<meta property="og:description" content="CMD transforme votre catalogue ou votre prise de rendez-vous WhatsApp en vraie boutique en ligne : commandes claires, prix fixes, image professionnelle.">
+<meta name="description" content="Créez votre boutique en ligne ou votre page de réservation en quelques minutes. Commandes et rendez-vous reçus sur WhatsApp, paiement Wave ou Orange Money. 14 jours d'essai offerts.">
+<meta property="og:title" content="CMD — Votre boutique ou vos rendez-vous en ligne">
+<meta property="og:description" content="Commandes et rendez-vous reçus sur WhatsApp, catalogue clair, image professionnelle. Créez votre boutique en quelques minutes.">
 <meta property="og:image" content="https://www.moncmd.site/og-image.jpg">
 <meta property="og:url" content="https://www.moncmd.site/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="1C621DE3-4443-4809-A987-882F313088E0_1_105_c.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-    --bg:#ffffff;
-    --bg-alt:#f7f7f7;
-    --card:#ffffff;
-    --orange:#e15b0f;
-    --orange-light:#ff8a3d;
-    --white:#171717;
-    --gray:#666666;
-    --line:rgba(0,0,0,0.08);
-    --line-strong:rgba(0,0,0,0.15);
+  --bg:#ffffff;
+  --bg-alt:#f6f5f3;
+  --encre:#171717;
+  --gris:#5f5f5f;
+  --orange:#e15b0f;
+  --orange-clair:#ff8a3d;
+  --orange-pale:#fff2e8;
+  --trait:rgba(0,0,0,.09);
+  --trait-fort:rgba(0,0,0,.16);
+  --vert:#1f7a3a;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-    background:var(--bg);
-    color:var(--white);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-    font-family:'Montserrat',sans-serif;
-}
-h1,h2,h3,.display{
-    font-family:'Montserrat',sans-serif;
-    font-weight:700;
-    letter-spacing:-0.02em;
-    line-height:1.05;
-}
-.mono{
-    font-family:'IBM Plex Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-    font-size:0.72rem;
-}
+html{scroll-behavior:smooth;scroll-padding-top:80px;}
+body{background:var(--bg);color:var(--encre);font-family:'Montserrat',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55;}
 a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-@media(max-width:640px){.wrap{padding:0 28px;}}
+img,video{max-width:100%;display:block;}
+h1,h2,h3{font-weight:800;letter-spacing:-0.02em;line-height:1.08;}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem);}
+h3{font-size:1.25rem;line-height:1.25;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+section{padding:96px 0;}
+.section-head{max-width:720px;margin-bottom:48px;}
+.section-head p{color:var(--gris);font-size:1.05rem;margin-top:14px;}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px;}
 
-/* NAV */
-header{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(0,0,0,0.08);
-}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1180px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand img{width:34px;height:34px;border-radius:8px;}
-.brand-text{display:flex;flex-direction:column;line-height:1.1;}
-.brand-text .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;}
-.brand-text .powered{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--gray);letter-spacing:0.06em;}
-.nav-links{display:flex;gap:32px;align-items:center;}
-.nav-links a{font-size:0.92rem;color:#555;transition:color .2s;}
-.nav-links a:hover{color:var(--white);}
-.nav-cta{background:var(--orange);color:white;padding:10px 20px;border-radius:999px;font-weight:600;font-size:0.88rem;transition:background .2s, transform .2s;}
-.nav-cta:hover{background:var(--orange-light);transform:translateY(-1px);}
-.nav-toggle{display:none;}
-@media(max-width:820px){
-    .nav-links{display:none;}
-    .nav-toggle{display:block;background:none;border:1px solid var(--line-strong);color:var(--white);padding:8px 14px;border-radius:8px;font-size:0.85rem;}
-}
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:.95rem;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:background .2s,border-color .2s;}
+.btn-primary{background:var(--orange);color:#fff;}
+.btn-primary:hover{background:#c94f0b;}
+.btn-ligne{border-color:var(--trait-fort);color:var(--encre);background:#fff;}
+.btn-ligne:hover{border-color:var(--encre);}
+.btn-clair{border-color:rgba(255,255,255,.55);color:#fff;}
+.btn-clair:hover{border-color:#fff;}
 
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;overflow:hidden;}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,.45));z-index:-2;}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
-@media(max-width:940px){
-    .hero-grid{grid-template-columns:1fr;text-align:center;}
-    .hero p.lead{margin-left:auto;margin-right:auto;}
-    .cta-row{justify-content:center;}
-    .eyebrow{justify-content:center;}
+/* En-tête */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--trait);}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px;max-width:1160px;margin:0 auto;}
+.marque{display:flex;align-items:center;gap:10px;}
+.marque img{width:34px;height:34px;border-radius:8px;}
+.marque .nom{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.1rem;line-height:1;}
+.marque .hv{display:block;font-size:.62rem;color:var(--gris);font-weight:500;}
+.liens{display:flex;gap:26px;align-items:center;font-size:.92rem;}
+.liens a{color:#444;}
+.liens a:hover{color:var(--encre);}
+.actions-nav{display:flex;align-items:center;gap:10px;}
+.lien-connexion{font-size:.9rem;font-weight:600;}
+.btn-nav{padding:10px 18px;font-size:.88rem;}
+.btn-menu{display:none;background:none;border:1.5px solid var(--trait-fort);border-radius:10px;width:42px;height:40px;cursor:pointer;font-size:1.1rem;color:var(--encre);}
+@media(max-width:900px){
+  .liens,.lien-connexion{display:none;}
+  .btn-menu{display:inline-flex;align-items:center;justify-content:center;}
+  header.ouvert .liens{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:#fff;border-bottom:1px solid var(--trait);padding:6px 28px 16px;}
+  header.ouvert .liens a{padding:12px 0;width:100%;font-size:1rem;border-bottom:1px solid var(--trait);}
+  header.ouvert .liens .lien-connexion-mobile{display:block;color:var(--orange);font-weight:700;border-bottom:none;}
 }
-@media(max-width:640px){
-    .hero{min-height:100vh;}
-    .hero h1{font-size:2.4rem;}
-    .hero p.lead{font-size:1rem;line-height:1.7;}
-    .cta-row{flex-direction:row;justify-content:center;gap:12px;flex-wrap:wrap;}
-    .btn{width:auto;padding:14px 20px;}
-}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--orange-light);margin-bottom:22px;}
-.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);}
-.hero h1{font-size:clamp(2.4rem,5.2vw,4.1rem);margin-bottom:22px;color:white;}
-.hero h1 em{color:var(--orange);font-style:normal;}
-.hero p.lead{color:rgba(255,255,255,.85);font-size:1.15rem;line-height:1.7;max-width:620px;margin-bottom:14px;}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;}
-.btn{padding:16px 30px;border-radius:12px;font-weight:600;transition:.25s;display:inline-flex;align-items:center;gap:8px;font-size:0.95rem;}
-.btn-primary{background:var(--orange);color:white;}
-.btn-primary:hover{background:var(--orange-light);transform:translateY(-2px);}
-.btn-ghost{border:1px solid var(--line-strong);color:var(--white);}
-.btn-ghost:hover{border-color:var(--orange);color:var(--orange-light);transform:translateY(-2px);}
-.hero-contact{color:white;border-color:rgba(255,255,255,.5);}
-.hero-contact:hover{border-color:var(--orange);color:var(--orange);}
+.lien-connexion-mobile{display:none;}
 
-@media(max-width:480px){
-    .hero{padding:120px 0 60px;}
-    .hero h1{font-size:2.2rem;line-height:1.1;margin-bottom:18px;}
-    .hero p.lead{font-size:0.95rem;line-height:1.6;margin-bottom:26px;}
-    .eyebrow{font-size:0.65rem;margin-bottom:16px;}
-    .cta-row{gap:10px;}
-    .btn{padding:12px 18px;font-size:0.85rem;border-radius:8px;}
-    .hero-video{object-fit:cover;transform:scale(0.85);}
-}
+/* Hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:140px 0 80px;overflow:hidden;color:#fff;}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.25) 100%);z-index:-1;}
+.video-mobile{display:none;}
+@media(max-width:700px){.video-bureau{display:none;}.video-mobile{display:block;}}
+.hero > .wrap{width:100%;}
+.hero-texte{max-width:640px;}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.3rem);margin-bottom:22px;}
+.hero h1 em{color:var(--orange-clair);font-style:normal;}
+.hero .chapo{font-size:1.12rem;color:rgba(255,255,255,.88);max-width:560px;margin-bottom:32px;}
+.rangee-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.hero .reassurance{margin-top:18px;font-size:.88rem;color:rgba(255,255,255,.75);}
 
-/* SECTIONS */
-section{padding:120px 0;position:relative;}
-@media(max-width:640px){section{padding:80px 0;}}
-.section-head{max-width:640px;margin-bottom:56px;}
-.section-head .mono{color:var(--orange-light);margin-bottom:14px;display:block;}
-.section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);}
-.section-head p{color:var(--gray);margin-top:16px;font-size:1.02rem;line-height:1.6;}
+/* Les deux portes : produits / prestations */
+.portes{padding-top:72px;}
+.portes-grille{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:820px){.portes-grille{grid-template-columns:1fr;}}
+.porte{border:1.5px solid var(--trait-fort);border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:14px;background:#fff;}
+.porte.service{background:var(--encre);color:#fff;border-color:var(--encre);}
+.porte .pour{font-weight:700;font-size:.95rem;color:var(--orange);}
+.porte.service .pour{color:var(--orange-clair);}
+.porte h3{font-size:clamp(1.5rem,2.6vw,2rem);}
+.porte p{color:var(--gris);}
+.porte.service p{color:rgba(255,255,255,.75);}
+.porte .exemples{font-size:.9rem;}
+.porte .rangee-cta{margin-top:auto;padding-top:10px;}
+.porte.service .btn-ligne{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+.porte.service .btn-ligne:hover{border-color:#fff;}
 
-/* PROBLEM / SOLUTION */
-.ps-compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;}
-@media(max-width:780px){.ps-compare{grid-template-columns:1fr;}}
-.ps-col{background:white;padding:48px;}
-.ps-col.bad{background:#fafafa;}
-.ps-col.good{background:rgba(225,91,15,0.06);}
-.ps-col h3{font-size:1.3rem;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
-.tag{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:4px 8px;border-radius:6px;}
-.tag.bad{background:rgba(255,90,90,0.12);color:#ff8a8a;}
-.tag.good{background:rgba(225,91,15,0.18);color:var(--orange-light);}
-.ps-col ul{list-style:none;display:flex;flex-direction:column;gap:16px;}
-.ps-col li{color:var(--gray);font-size:0.95rem;line-height:1.5;padding-left:20px;position:relative;}
-.ps-col.bad li::before{content:"—";position:absolute;left:0;color:#7a5a54;}
-.ps-col.good li::before{content:"—";position:absolute;left:0;color:var(--orange);}
-.ps-col.good li{color:var(--white);}
+/* Avant / après */
+.comparaison{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:820px){.comparaison{grid-template-columns:1fr;}}
+.colonne{border-radius:20px;padding:30px;background:var(--bg-alt);}
+.colonne.apres{background:var(--orange-pale);}
+.colonne h3{margin-bottom:16px;}
+.colonne ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.colonne li{padding-left:28px;position:relative;}
+.colonne.avant li::before{content:"✕";position:absolute;left:0;color:#a33;font-weight:700;}
+.colonne.apres li::before{content:"✓";position:absolute;left:0;color:var(--vert);font-weight:800;}
 
-/* LAUNCH VIDEO */
-.video-frame{position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:20px;border:1px solid var(--line-strong);background:#000;}
-.video-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, rgba(225,91,15,0.16), transparent 65%);pointer-events:none;}
-.video-frame video{position:relative;z-index:5;display:block;width:100%;height:100%;object-fit:cover;}
+/* Étapes */
+.fond-alt{background:var(--bg-alt);}
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:etape;}
+@media(max-width:820px){.etapes{grid-template-columns:1fr;}}
+.etape{counter-increment:etape;}
+.etape::before{content:counter(etape);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:16px;}
+.etape h3{margin-bottom:8px;}
+.etape p{color:var(--gris);}
+.etapes-cta{margin-top:40px;}
 
-/* DEMO */
-.demo-box{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:56px;}
-@media(max-width:820px){.demo-box{grid-template-columns:1fr;padding:36px 28px;}}
-.demo-box h3{font-size:1.7rem;margin-bottom:16px;}
-.demo-box p{color:var(--gray);line-height:1.6;margin-bottom:26px;}
-.demo-visual{
-    border-radius:24px;border:1px solid var(--line-strong);background:var(--bg);
-    display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;padding:20px;
-}
-.demo-visual video{width:auto;height:600px;max-width:100%;aspect-ratio:9/16;object-fit:contain;display:block;}
-@media(max-width:480px){.demo-visual video{height:420px;}}
+/* Fonctionnalités */
+.fonctions{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+@media(max-width:900px){.fonctions{grid-template-columns:1fr;gap:28px;}}
+.fonctions h3{font-size:1.05rem;color:var(--gris);font-weight:700;margin-bottom:18px;}
+.liste-f{display:flex;flex-direction:column;gap:22px;}
+.f h4{font-size:1.05rem;margin-bottom:4px;}
+.f p{color:var(--gris);font-size:.96rem;}
+.demo-inline{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
 
-/* ADVANTAGES */
-.advantages-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-.adv-card{background:white;border:1px solid var(--line);border-radius:24px;padding:40px;}
-.adv-shot{
-    aspect-ratio:16/10;border-radius:14px;border:1px dashed var(--line-strong);background:var(--bg-alt);
-    display:flex;align-items:center;justify-content:center;margin-bottom:24px;overflow:hidden;
-}
-.adv-shot img{width:100%;height:100%;object-fit:cover;}
-.adv-shot span{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray);text-align:center;padding:0 20px;}
-.adv-card.seller{background:rgba(225,91,15,.05);}
-.adv-label{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);font-weight:700;margin-bottom:18px;}
-.adv-card h3{font-size:1.5rem;margin-bottom:32px;}
+/* Démo vidéo */
+.demo-bloc{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;background:var(--encre);color:#fff;border-radius:28px;padding:56px;}
+@media(max-width:900px){.demo-bloc{grid-template-columns:1fr;padding:32px 24px;}}
+.demo-bloc p{color:rgba(255,255,255,.78);margin:16px 0 26px;}
+.demo-bloc video{border-radius:18px;max-height:620px;margin:0 auto;background:#000;}
 
-/* PHOTO SHOWCASE — bande photo pleine largeur, défilement horizontal automatique */
-.photo-showcase{padding:100px 0 110px;background:var(--bg-alt);}
-.photo-showcase .section-head{margin-bottom:56px;}
-.showcase-marquee-wrapper{
-    overflow:hidden;width:100%;
-    -webkit-mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);
-    mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);
-}
-.showcase-marquee-track{
-    display:flex;gap:24px;width:max-content;
-    animation:showcase-scroll 32s linear infinite;
-}
-/* Le défilement ne se met plus en pause au survol/toucher — sur mobile,
-   le hover reste "collé" après un tap et bloquait l'animation en continu. */
-@keyframes showcase-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.showcase-item{
-    flex:0 0 auto;width:280px;aspect-ratio:9/18;border-radius:20px;overflow:hidden;
-    box-shadow:0 12px 32px rgba(0,0,0,.10);background:var(--card);
-}
-.showcase-item img{width:100%;height:100%;object-fit:cover;display:block;}
-@media(max-width:600px){.showcase-item{width:190px;}}
-.feature{padding:18px 0;border-bottom:1px solid var(--line);}
-.feature:last-child{border-bottom:none;}
-.feature h4{font-size:1rem;margin-bottom:8px;}
-.feature p{color:#666;line-height:1.6;font-size:.92rem;}
-@media(max-width:800px){.advantages-grid{grid-template-columns:1fr;} .adv-card{padding:28px;}}
+/* Vitrine photos */
+.vitrine{overflow:hidden;}
+.vitrine-piste{display:flex;gap:18px;width:max-content;animation:defile 50s linear infinite;}
+.vitrine-piste img{width:220px;height:auto;aspect-ratio:700/1517;object-fit:cover;border-radius:18px;border:1px solid var(--trait);}
+@keyframes defile{to{transform:translateX(-50%);}}
+.vitrine:hover .vitrine-piste{animation-play-state:paused;}
 
-/* PRICING */
-.pricing-toggle{display:inline-flex;gap:6px;background:var(--bg-alt);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:20px;}
-.pt-btn{background:none;border:none;padding:9px 20px;border-radius:999px;font-weight:600;font-size:0.88rem;color:var(--gray);cursor:pointer;transition:all .2s;}
-.pt-btn.active{background:var(--orange);color:#fff;}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-@media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.pricing-grid{grid-template-columns:1fr;}}
-.plan{
-    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 24px;
-    display:flex;flex-direction:column;position:relative;
-    clip-path:polygon(0 0,100% 0,100% 100%,24px 100%,0 calc(100% - 24px));
-}
-.plan.featured{border-color:var(--orange);background:linear-gradient(180deg,rgba(225,91,15,0.10),var(--card));}
-.plan.soon{opacity:0.55;}
-.plan .badge{position:absolute;top:-11px;right:20px;background:var(--orange);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:4px 10px;border-radius:999px;font-weight:600;}
-.plan .badge.soon-badge{background:var(--bg-alt);color:var(--gray);border:1px solid var(--line-strong);}
-.plan h4{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;margin-bottom:6px;}
-.plan .price{font-family:'IBM Plex Mono',monospace;font-size:1.6rem;color:var(--orange-light);margin:14px 0 4px;}
-.plan .price strong{font-size:0.78rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:0.03em;}
-.plan .desc{color:var(--gray);font-size:0.85rem;margin-bottom:20px;min-height:36px;}
-.plan .fee-note{color:var(--gray);font-size:.85rem;margin-bottom:20px;}
-.plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px;flex:1;}
-.plan li{font-size:0.85rem;color:var(--white);padding-left:18px;position:relative;}
-.plan li::before{content:"+";position:absolute;left:0;color:var(--orange);font-weight:700;}
-.plan .btn{justify-content:center;width:100%;}
+/* Vidéo de lancement */
+.cadre-video{border-radius:22px;overflow:hidden;background:#000;}
+.cadre-video video{width:100%;}
 
-/* TESTIMONIALS */
-.testimonials{overflow:hidden;}
-.marquee{width:100%;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
-.marquee-track{display:flex;gap:20px;width:max-content;animation:marquee 32s linear infinite;}
-.marquee:hover .marquee-track{animation-play-state:paused;}
-@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.t-card{
-    flex:0 0 320px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;
-}
-.t-card .stars{color:var(--orange);font-size:0.9rem;margin-bottom:14px;letter-spacing:2px;}
-.t-card p{font-size:0.95rem;line-height:1.6;color:var(--white);margin-bottom:20px;}
-.t-author{display:flex;align-items:center;gap:12px;}
-.t-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#7a2f06);flex-shrink:0;}
-.t-author .name{font-weight:600;font-size:0.88rem;}
-.t-author .role{font-size:0.78rem;color:var(--gray);}
-@media(max-width:640px){.t-card{flex:0 0 260px;padding:22px;}}
+/* Tarifs */
+.bascule{display:inline-flex;background:var(--bg-alt);border-radius:999px;padding:5px;margin-top:24px;}
+.bascule button{border:none;background:none;padding:10px 22px;border-radius:999px;font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;color:var(--gris);}
+.bascule button[aria-pressed="true"]{background:#fff;color:var(--encre);box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.essai-note{margin-top:16px;font-weight:600;color:var(--vert);}
+.grille-prix{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
+@media(max-width:960px){.grille-prix{grid-template-columns:1fr;max-width:520px;}}
+.formule{border:1.5px solid var(--trait-fort);border-radius:22px;padding:30px;display:flex;flex-direction:column;background:#fff;position:relative;}
+.formule.populaire{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange);}
+.formule .badge{position:absolute;top:-13px;left:28px;background:var(--orange);color:#fff;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px;}
+.formule h3{font-size:1.4rem;}
+.formule .desc{color:var(--gris);font-size:.93rem;margin:6px 0 18px;min-height:2.8em;}
+.formule .prix{font-size:2rem;font-weight:800;letter-spacing:-0.02em;}
+.formule .prix small{font-size:.95rem;font-weight:600;color:var(--gris);}
+.formule .frais{font-size:.85rem;color:var(--gris);margin-top:4px;min-height:1.3em;}
+.formule ul{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:10px;font-size:.94rem;}
+.formule li{padding-left:24px;position:relative;}
+.formule li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800;}
+.formule .btn{margin-top:auto;width:100%;}
+.lien-comparer{margin-top:28px;background:none;border:none;font:inherit;font-weight:700;color:var(--orange);cursor:pointer;text-decoration:underline;text-underline-offset:4px;}
+.tableau-wrap{overflow-x:auto;margin-top:24px;display:none;}
+.tableau-wrap.ouvert{display:block;}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem;}
+th,td{padding:12px 14px;border-bottom:1px solid var(--trait);text-align:left;}
+th{font-size:.88rem;}
+td:not(:first-child),th:not(:first-child){text-align:center;}
+td.non{color:#b5b5b5;}
+
+/* Témoignages (affichés seulement s'il y en a) */
+.temoignages-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.temoignage{background:var(--bg-alt);border-radius:20px;padding:26px;}
+.temoignage p{margin-bottom:16px;}
+.temoignage .qui{font-weight:700;}
+.temoignage .activite{color:var(--gris);font-size:.88rem;}
 
 /* FAQ */
-.faq-list{display:flex;flex-direction:column;gap:14px;max-width:780px;}
-.faq-cat{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-size:0.7rem;color:var(--orange);margin:28px 0 4px;}
-.faq-cat:first-child{margin-top:0;}
-.faq-item{border:1px solid var(--line);border-radius:16px;padding:6px 24px;background:var(--card);}
-.faq-item summary{
-    list-style:none;cursor:pointer;padding:18px 0;font-weight:600;font-size:1rem;
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
+.faq{max-width:780px;}
+.faq h3{font-size:.95rem;color:var(--gris);margin:30px 0 8px;}
+.faq h3:first-child{margin-top:0;}
+details{border-bottom:1px solid var(--trait);}
+summary{cursor:pointer;padding:18px 34px 18px 0;font-weight:700;list-style:none;position:relative;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:1.4rem;font-weight:500;color:var(--orange);}
+details[open] summary::after{content:"–";}
+details p{padding:0 0 18px;color:var(--gris);}
+
+/* Bandeau final */
+.final{background:var(--orange);color:#fff;border-radius:28px;padding:64px 40px;text-align:center;}
+.final p{max-width:560px;margin:14px auto 28px;color:rgba(255,255,255,.9);font-size:1.05rem;}
+.final .rangee-cta{justify-content:center;}
+.final .btn-primary{background:#fff;color:var(--orange);}
+.final .btn-primary:hover{background:#fff2e8;}
+
+footer{padding:40px 0;border-top:1px solid var(--trait);font-size:.9rem;color:var(--gris);}
+.pied{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
+.pied .marque img{width:28px;height:28px;}
+.pied nav{padding:0;gap:22px;margin:0;}
+
+@media(max-width:640px){
+  section{padding:68px 0;}
+  .wrap,nav{padding-left:20px;padding-right:20px;}
+  .porte,.formule{padding:26px 22px;}
+  .final{padding:48px 22px;}
 }
-.faq-item summary::-webkit-details-marker{display:none;}
-.faq-item summary::after{content:"+";font-size:1.4rem;color:var(--orange);font-weight:400;transition:transform .25s;flex-shrink:0;}
-.faq-item[open] summary::after{transform:rotate(45deg);}
-.faq-item p{color:var(--gray);font-size:0.92rem;line-height:1.6;padding-bottom:20px;}
-
-/* CTA BAND / FOOTER */
-.cta-band{background:linear-gradient(135deg,#1a0f06,#0b0b0c);border:1px solid var(--line);border-radius:24px;padding:64px 48px;text-align:center;}
-@media(max-width:640px){.cta-band{padding:44px 24px;}}
-.cta-band h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:18px;color:white;}
-.cta-band p{color:rgba(255,255,255,.75);margin-bottom:30px;}
-.cta-band .cta-row{justify-content:center;}
-
-footer{border-top:1px solid var(--line);padding:40px 0;}
-.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
-.footer-brand{display:flex;align-items:center;gap:10px;color:var(--gray);font-size:0.85rem;}
-.footer-brand img{width:22px;height:22px;border-radius:6px;}
-.social-links{display:flex;gap:18px;}
-.social-links a{color:var(--gray);font-size:0.85rem;transition:color .2s;}
-.social-links a:hover{color:var(--orange-light);}
-
-::selection{background:var(--orange);color:#0b0b0c;}
-
-
-.desktop-video{
-    display:block;
-}
-
-.mobile-video{
-    display:none;
-}
-
-@media(max-width:768px){
-
-    .desktop-video{
-        display:none;
-    }
-
-    .mobile-video{
-        display:block;
-    }
-
-}
-
-
 @media(max-width:480px){
-
-.hero video{
-    object-fit:cover;
-    transform:none;
+  .btn-nav{padding:9px 14px;font-size:.82rem;white-space:nowrap;}
+  .marque .hv{display:none;}
 }
-
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .vitrine-piste{animation:none;}
 }
-
-
-.compare-link{background:none;border:none;color:var(--orange);font-weight:600;font-size:0.9rem;cursor:pointer;margin-top:12px;text-decoration:underline;}
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;}
-.modal-overlay.open{display:flex;}
-.modal-box{background:#fff;border-radius:16px;padding:32px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;position:relative;}
-.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.2rem;cursor:pointer;}
-.table-scroll{overflow-x:auto;margin-top:20px;}
-table{width:100%;border-collapse:collapse;font-size:0.85rem;}
-th,td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:center;}
-td:first-child,th:first-child{text-align:left;}
-th{color:var(--orange);font-weight:600;}
-
-
-
 </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="brand">
-      <img src="1C621DE3-4443-4809-A987-882F313088E0_1_105_c.jpeg" alt="Logo CMD">
-      <div class="brand-text">
-        <span class="name">CMD</span>
-        <span class="powered">Powered by HV</span>
-      </div>
-    </div>
-    <div class="nav-links">
-      <a href="#solution">Solution</a>
-      <a href="#presta">Prestataires</a>
-      <a href="#demo">Démo</a>
+<header id="entete">
+  <nav aria-label="Navigation principale">
+    <a href="#" class="marque" aria-label="CMD, accueil">
+      <img src="1C621DE3-4443-4809-A987-882F313088E0_1_105_c.jpeg" alt="">
+      <span><span class="nom">CMD</span><span class="hv">Powered by HV</span></span>
+    </a>
+    <div class="liens" id="liens">
+      <a href="#vendeurs">Boutiques</a>
+      <a href="#prestataires">Prestataires</a>
       <a href="#tarifs">Tarifs</a>
-      <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20CMD" class="nav-cta">Contactez-nous</a>
+      <a href="#faq">Questions</a>
+      <a class="lien-connexion-mobile" data-lien="connexion" href="#">Se connecter</a>
+    </div>
+    <div class="actions-nav">
+      <a class="lien-connexion" data-lien="connexion" href="#">Se connecter</a>
+      <a class="btn btn-primary btn-nav" data-lien="inscription" href="#">Créer ma boutique</a>
+      <button class="btn-menu" id="btn-menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="liens">☰</button>
     </div>
   </nav>
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="hero">
-    <video class="hero-video desktop-video" autoplay muted loop playsinline>
-
-      <source src="Video_1-2.mp4" type="video/mp4">
-
-  </video>
-
-  <video class="hero-video mobile-video" autoplay muted loop playsinline>
-
-      <source src="Video_2.mp4" type="video/mp4">
-
-  </video>
-    <div class="hero-overlay"></div>
-    <div class="wrap hero-grid">
-      <div data-aos="fade-up">
+    <video class="hero-video video-bureau" autoplay muted loop playsinline preload="metadata"><source src="Video_1-2.mp4" type="video/mp4"></video>
+    <video class="hero-video video-mobile" autoplay muted loop playsinline preload="metadata"><source src="Video_2.mp4" type="video/mp4"></video>
+    <div class="wrap">
+      <div class="hero-texte">
         <h1>Votre catalogue mérite mieux <em>qu'un fil WhatsApp.</em></h1>
-        <p class="lead">Une boutique en ligne ou un système de prise de rendez-vous, pensés pour les vendeurs et prestataires qui veulent vendre plus simplement, mieux s'organiser et offrir une meilleure expérience à leurs clients.</p>
-        <div class="cta-row">
-          <a href="#demo" class="btn btn-primary">Voir la démo</a>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20CMD" class="btn btn-ghost hero-contact">Contactez-nous</a>
+        <p class="chapo">Une boutique en ligne ou une page de prise de rendez-vous, pour les vendeurs et prestataires qui veulent vendre plus simplement, mieux s'organiser et offrir une meilleure expérience à leurs clients.</p>
+        <div class="rangee-cta">
+          <a class="btn btn-primary" data-lien="inscription" href="#">Créer ma boutique</a>
+          <a class="btn btn-clair" href="#demo">Voir la démo</a>
         </div>
+        <p class="reassurance" data-si-inscription>14 jours d'essai offerts, sans paiement. Prêt en quelques minutes.</p>
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM / SOLUTION -->
-  <section id="solution">
+  <section class="portes">
     <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">Le constat</span>
-        <h2>Vendre sur WhatsApp, c'est vite le bazar.</h2>
-        <p>Passé les premières commandes, les messages s'accumulent et le catalogue devient impossible à suivre — pour vous comme pour vos clients.</p>
+      <div class="section-head">
+        <h2>Vous vendez des produits, ou vous proposez des services&nbsp;?</h2>
+        <p>CMD fonctionne différemment selon votre activité. Choisissez la vôtre.</p>
       </div>
-      <div class="ps-compare">
-        <div class="ps-col bad" data-aos="fade-right">
-          <h3>Sans CMD <span class="tag bad">Avant</span></h3>
+      <div class="portes-grille">
+        <article class="porte">
+          <span class="pour">Pour les vendeurs</span>
+          <h3>Une boutique en ligne, les commandes sur WhatsApp</h3>
+          <p>Vos clients parcourent votre catalogue, remplissent leur panier et vous envoient une commande déjà résumée&nbsp;: produits, quantités, total, adresse.</p>
+          <p class="exemples">Mode, cosmétiques, restauration, import, accessoires…</p>
+          <div class="rangee-cta">
+            <a class="btn btn-primary" data-lien="inscription" href="#">Créer ma boutique</a>
+            <a class="btn btn-ligne" data-lien="demo-boutique" href="#" target="_blank" rel="noopener">Voir la démo</a>
+          </div>
+        </article>
+        <article class="porte service">
+          <span class="pour">Pour les prestataires</span>
+          <h3>Une page de réservation, l'agenda qui se remplit seul</h3>
+          <p>Vos clients choisissent la prestation, la personne de votre équipe, la date et l'heure parmi vos créneaux libres. La demande arrive sur votre WhatsApp.</p>
+          <p class="exemples">Coiffure, onglerie, maquillage, soins, bien-être…</p>
+          <div class="rangee-cta">
+            <a class="btn btn-primary" data-lien="inscription-prestation" href="#">Créer ma page</a>
+            <a class="btn btn-ligne" data-lien="demo-prestation" href="#" target="_blank" rel="noopener">Voir la démo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Vendre sur WhatsApp, c'est vite le bazar.</h2>
+        <p>Passé les premières commandes, les messages s'accumulent et le catalogue devient impossible à suivre, pour vous comme pour vos clients.</p>
+      </div>
+      <div class="comparaison">
+        <div class="colonne avant">
+          <h3>Sans CMD</h3>
           <ul>
             <li>Les produits sont envoyés un par un sur WhatsApp</li>
             <li>Les clients demandent toujours les mêmes informations</li>
-            <li>Les commandes se perdent dans les discussions</li>
+            <li>Les commandes et les rendez-vous se perdent dans les discussions</li>
             <li>Difficile de présenter une image professionnelle</li>
           </ul>
         </div>
-        <div class="ps-col good" data-aos="fade-left">
-          <h3>Avec CMD <span class="tag good">Après</span></h3>
+        <div class="colonne apres">
+          <h3>Avec CMD</h3>
           <ul>
-            <li>Une boutique en ligne accessible à tout moment</li>
-            <li>Un catalogue clair avec prix et produits organisés</li>
-            <li>Des commandes mieux structurées via WhatsApp</li>
+            <li>Une boutique ou une page de réservation accessible à tout moment</li>
+            <li>Des prix, des produits et des prestations clairement présentés</li>
+            <li>Des commandes et des rendez-vous structurés, reçus sur WhatsApp</li>
             <li>Une image professionnelle qui inspire confiance</li>
           </ul>
         </div>
@@ -401,416 +325,379 @@ th{color:var(--orange);font-weight:600;}
     </div>
   </section>
 
-  <!-- LAUNCH VIDEO -->
-  <section>
+  <section class="fond-alt" id="comment">
     <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">CMD en mouvement</span>
-        <h2>Le lancement de CMD, en vidéo.</h2>
+      <div class="section-head">
+        <h2>En ligne en quelques minutes, sans nous attendre.</h2>
       </div>
-      <div class="video-frame" data-aos="zoom-in">
-        <video controls preload="metadata" poster="Capture d’écran, le 2026-07-23 à 20.20.19.png">
-            <source src="CMD.mp4" type="video/mp4">
-        </video>
+      <div class="etapes">
+        <div class="etape">
+          <h3>Créez votre compte</h3>
+          <p>Le nom de votre activité, votre adresse <strong>shop.moncmd.site/votre-nom</strong> et votre numéro WhatsApp. C'est tout.</p>
+        </div>
+        <div class="etape">
+          <h3>Ajoutez vos produits ou prestations</h3>
+          <p>Photos, prix, catégories, horaires d'ouverture&nbsp;: tout se gère depuis votre téléphone, dans votre tableau de bord.</p>
+        </div>
+        <div class="etape">
+          <h3>Partagez votre lien</h3>
+          <p>En statut WhatsApp, en bio Instagram ou TikTok, ou avec le QR Code et l'affiche de lancement générés pour vous.</p>
+        </div>
+      </div>
+      <div class="etapes-cta"><a class="btn btn-primary" data-lien="inscription" href="#">Commencer maintenant</a></div>
+    </div>
+  </section>
+
+  <section id="vendeurs">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pour les vendeurs&nbsp;: vos clients trouvent plus vite, vous gérez mieux.</h2>
+      </div>
+      <div class="fonctions">
+        <div>
+          <h3>Ce que voient vos clients</h3>
+          <div class="liste-f">
+            <div class="f"><h4>Un catalogue organisé</h4><p>Catégories, photos, descriptions et prix visibles. Plus besoin de demander «&nbsp;c'est combien&nbsp;?&nbsp;».</p></div>
+            <div class="f"><h4>Une commande en quelques clics</h4><p>Panier, date de livraison, adresse, paiement Wave, Orange Money ou à la livraison. Tout arrive résumé sur votre WhatsApp.</p></div>
+            <div class="f"><h4>Une FAQ à votre image</h4><p>Livraison, délais, conditions&nbsp;: vous répondez une fois, vos clients lisent la réponse sur la boutique.</p></div>
+            <div class="f"><h4>Des avis clients</h4><p>Les retours d'autres acheteurs rassurent avant la commande.</p></div>
+          </div>
+        </div>
+        <div>
+          <h3>Ce que vous gérez</h3>
+          <div class="liste-f">
+            <div class="f"><h4>Vos produits</h4><p>Ajout, modification, mise en avant et ordre d'affichage, depuis votre téléphone.</p></div>
+            <div class="f"><h4>Vos commandes et vos clients</h4><p>Toutes les commandes au même endroit, avec la liste de vos clients.</p></div>
+            <div class="f"><h4>Votre stock (Pro)</h4><p>Le stock baisse à chaque commande, et vos clients peuvent demander à être prévenus du réassort.</p></div>
+            <div class="f"><h4>Des avis contrôlés</h4><p>Vous validez chaque avis avant sa publication.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-inline">
+        <a class="btn btn-ligne" data-lien="demo-boutique" href="#" target="_blank" rel="noopener">Ouvrir la boutique de démo</a>
       </div>
     </div>
   </section>
 
-  <!-- DEMO -->
+  <section class="fond-alt" id="prestataires">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pour les prestataires&nbsp;: vos rendez-vous, sans y passer vos journées sur WhatsApp.</h2>
+        <p>Coiffure, beauté, bien-être&nbsp;: vos clients réservent en ligne, vous gardez le contrôle de votre agenda.</p>
+      </div>
+      <div class="fonctions">
+        <div>
+          <h3>Ce que voient vos clients</h3>
+          <div class="liste-f">
+            <div class="f"><h4>Réservation en ligne</h4><p>Ils choisissent la prestation, la date et l'heure parmi vos créneaux libres, sans vous écrire pour vérifier.</p></div>
+            <div class="f"><h4>Choix de la personne</h4><p>S'ils ont une préférence dans votre équipe, ils la sélectionnent. Sinon, le premier créneau libre leur suffit.</p></div>
+            <div class="f"><h4>À domicile ou au salon</h4><p>Ils indiquent où la prestation doit avoir lieu.</p></div>
+            <div class="f"><h4>Galerie et avis</h4><p>Vos réalisations et les retours d'autres clients, pour réserver en confiance.</p></div>
+          </div>
+        </div>
+        <div>
+          <h3>Ce que vous gérez</h3>
+          <div class="liste-f">
+            <div class="f"><h4>Votre agenda</h4><p>Toutes les réservations au même endroit, avec vos horaires, vos jours de fermeture et un nombre maximum de rendez-vous par jour.</p></div>
+            <div class="f"><h4>Votre équipe (Pro)</h4><p>Chaque personne avec ses propres prestations.</p></div>
+            <div class="f"><h4>Des créneaux bloqués (Pro)</h4><p>Une pause, un imprévu&nbsp;: bloquez un créneau précis en deux secondes.</p></div>
+            <div class="f"><h4>Boutique + prestations</h4><p>Vous vendez aussi des soins ou des accessoires&nbsp;? Le mode hybride réunit boutique et réservation sur une seule page.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-inline">
+        <a class="btn btn-ligne" data-lien="demo-prestation" href="#" target="_blank" rel="noopener">Ouvrir la page de démo</a>
+      </div>
+    </div>
+  </section>
+
   <section id="demo">
     <div class="wrap">
-      <div class="demo-box">
-        <div data-aos="fade-right">
-          <span class="mono" style="color:var(--orange-light);">Essayez maintenant</span>
-          <h3 style="margin-top:14px;">Une vraie boutique — ou un vrai système de rendez-vous. Pas une maquette.</h3>
-          <p>Explorez la démo interactive de CMD, côté vente (catalogue, fiche produit, avis clients, commande en un clic) ou côté service (prestations, choix du prestataire, prise de rendez-vous) — exactement ce que vos clients auront entre les mains.</p>
-          <button onclick="document.getElementById('demo-modal').classList.add('open')" class="btn btn-primary">Ouvrir la démo</button>
-        </div>
-        <div class="demo-visual" data-aos="fade-left">
-            <video controls poster="IMG_7039.PNG">
-                <source src="videodemo.mp4" type="video/mp4">
-            </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADVANTAGES -->
-  <section class="advantages">
-    <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">Pourquoi CMD ?</span>
-        <h2>Vos clients trouvent plus facilement. Vous gérez plus efficacement.</h2>
-        <p>CMD transforme une simple conversation WhatsApp en une expérience de vente organisée, professionnelle et rassurante.</p>
-      </div>
-      <div class="advantages-grid">
-        <div class="adv-card" data-aos="fade-up">
-          <div class="adv-label">Pour vos clients</div>
-          <h3>Une expérience d'achat plus simple</h3>
-          <div class="feature"><h4>📦 Catalogue organisé</h4><p>Vos clients retrouvent vos produits facilement grâce à une boutique claire avec catégories, photos, descriptions et prix visibles.</p></div>
-          <div class="feature"><h4>💬 FAQ personnalisable</h4><p>Répondez aux questions fréquentes directement depuis votre boutique : livraison, paiement, disponibilité, conditions...</p></div>
-          <div class="feature"><h4>⭐ Avis clients</h4><p>Vos clients peuvent consulter les retours d'autres acheteurs pour acheter avec plus de confiance.</p></div>
-          <div class="feature"><h4>🛒 Commande simplifiée</h4><p>Une navigation fluide qui guide le client jusqu'à la commande WhatsApp.</p></div>
-        </div>
-        <div class="adv-card seller" data-aos="fade-up" data-aos-delay="150">
-          <div class="adv-label">Pour les vendeurs</div>
-          <h3>Un meilleur contrôle de votre activité</h3>
-          <div class="feature"><h4>📊 Gestion des produits</h4><p>Ajoutez, modifiez et organisez vos produits facilement pour garder votre catalogue toujours à jour.</p></div>
-          <div class="feature"><h4>📦 Gestion du stock</h4><p>Évitez les erreurs grâce à un suivi plus clair de vos disponibilités.</p></div>
-          <div class="feature"><h4>🛡 Avis contrôlés</h4><p>Gardez une communauté fiable grâce à un système d'avis permettant de limiter les abus et les faux commentaires.</p></div>
-          <div class="feature"><h4>🚀 Lancement professionnel</h4><p>Recevez un QR Code et un support visuel pour présenter votre boutique et attirer vos premiers clients.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADVANTAGES — PRESTATAIRES DE SERVICES -->
-  <section class="advantages" id="presta" style="background:var(--bg-alt);">
-    <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">Vous êtes prestataire de services ?</span>
-        <h2>Coiffure, beauté, bien-être : vos rendez-vous, sans y passer vos journées sur WhatsApp.</h2>
-        <p>CMD s'adapte aussi aux prestataires : vos clients réservent en ligne, vous gardez le contrôle de votre agenda.</p>
-      </div>
-      <div class="advantages-grid">
-        <div class="adv-card" data-aos="fade-up">
-          <div class="adv-shot">
-            <!-- Vidéo/capture prestataire à ajouter ici (remplacer ce bloc par
-                 <video autoplay muted loop playsinline><source src="video-presta.mp4" type="video/mp4"></video>
-                 ou une image de la prise de rendez-vous) -->
-            <span>Vidéo de la prise de rendez-vous — à ajouter</span>
+      <div class="demo-bloc">
+        <div>
+          <h2>Une vraie boutique, pas une maquette.</h2>
+          <p>Ouvrez la démo sur votre téléphone&nbsp;: c'est exactement ce que vos clients auront entre les mains.</p>
+          <div class="rangee-cta">
+            <a class="btn btn-primary" data-lien="demo-boutique" href="#" target="_blank" rel="noopener">Démo boutique</a>
+            <a class="btn btn-clair" data-lien="demo-prestation" href="#" target="_blank" rel="noopener">Démo prestataire</a>
           </div>
-          <div class="adv-label">Pour vos clients</div>
-          <h3>Réserver en un instant</h3>
-          <div class="feature"><h4>📅 Réservation en ligne</h4><p>Vos clients choisissent la prestation, la date et l'heure qui leur conviennent, sans avoir à vous écrire pour vérifier vos disponibilités.</p></div>
-          <div class="feature"><h4>💇 Choix du prestataire</h4><p>S'ils ont une préférence pour une personne de votre équipe, ils peuvent la sélectionner directement — sinon, le premier créneau libre leur suffit.</p></div>
-          <div class="feature"><h4>🖼 Galerie de réalisations</h4><p>Vos clients voient vos réalisations avant de réserver, pour choisir en confiance.</p></div>
-          <div class="feature"><h4>⭐ Avis clients</h4><p>Les retours d'autres clients rassurent avant la prise de rendez-vous.</p></div>
         </div>
-        <div class="adv-card seller" data-aos="fade-up" data-aos-delay="150">
-          <div class="adv-label">Pour vous, prestataire</div>
-          <h3>Un agenda qui se remplit tout seul</h3>
-          <div class="feature"><h4>🗓 Gestion de votre agenda</h4><p>Toutes vos réservations centralisées, avec vos horaires et jours de fermeture pris en compte automatiquement.</p></div>
-          <div class="feature"><h4>👥 Votre équipe en ligne</h4><p>Ajoutez vos prestataires, chacun avec ses propres prestations et disponibilités.</p></div>
-          <div class="feature"><h4>💼 Boutique + prestations</h4><p>Vous vendez aussi des produits (soins, accessoires) ? Le mode hybride combine boutique et réservation sur une seule page.</p></div>
-          <div class="feature"><h4>🚀 Lancement professionnel</h4><p>Même QR Code et affiche de lancement que pour une boutique, adaptés à votre activité.</p></div>
-        </div>
+        <video controls preload="none" playsinline poster="poster-demo.jpg"><source src="videodemo.mp4" type="video/mp4"></video>
       </div>
     </div>
   </section>
 
-  <!-- SHOWCASE PHOTOS — défilement horizontal automatique -->
-  <section class="photo-showcase">
-    <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">En situation</span>
-        <h2>CMD, dans les mains de vos clients.</h2>
-      </div>
-    </div>
-    <div class="showcase-marquee-wrapper">
-      <div class="showcase-marquee-track" id="showcase-track">
-        <div class="showcase-item"><img src="showcase-1.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-2.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-3.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-4.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-5.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-6.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-7.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-8.png" alt=""></div>
-        <div class="showcase-item"><img src="showcase-9.png" alt=""></div>
-        <!-- Duplication pour la boucle infinie sans coupure visible -->
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-1.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-2.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-3.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-4.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-5.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-6.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-7.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-8.png" alt=""></div>
-        <div class="showcase-item" aria-hidden="true"><img src="showcase-9.png" alt=""></div>
-      </div>
-    </div>
+  <section class="vitrine" aria-label="Captures de boutiques CMD">
+    <div class="wrap"><div class="section-head"><h2>CMD, dans les mains de vos clients.</h2></div></div>
+    <div class="vitrine-piste" id="vitrine-piste"></div>
   </section>
 
-  <!-- PRICING -->
-  <section id="tarifs">
-    <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <button class="compare-link" onclick="document.getElementById('compare-modal').classList.add('open')">Comparer les formules en détail →</button>
-        <span class="mono">Tarifs</span>
-        <h2>Une formule pour chaque étape de votre activité.</h2>
-        <p>Commencez simple, évoluez quand vous êtes prêt.</p>
-        <div class="pricing-toggle">
-          <button id="toggle-boutique" class="pt-btn active" onclick="basculerTarifs('boutique')">Boutique</button>
-          <button id="toggle-presta" class="pt-btn" onclick="basculerTarifs('presta')">Prestataires</button>
-        </div>
-      </div>
-      <div class="pricing-grid" id="pricing-boutique">
-        <div class="plan" data-aos="fade-up">
-          <h4>Standard</h4>
-          <div class="desc">L'essentiel pour lancer votre boutique en ligne.</div>
-          <div class="price"><strong>2 500 FCFA/mois</strong></div>
-          <p class="fee-note">6 000 FCFA à l'inscription, premier mois inclus</p>
-          <ul>
-            <li>Jusqu'à 5 catégories, 20 produits</li>
-            <li>FAQ (5 questions max)</li>
-            <li>10 derniers avis affichés</li>
-            <li>Commande via WhatsApp</li>
-            <li>QR Code de votre boutique</li>
-            <li>Affiche de lancement</li>
-          </ul>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Standard%20CMD" class="btn btn-ghost">Choisir Standard</a>
-        </div>
-        <div class="plan featured" data-aos="fade-up" data-aos-delay="120">
-          <span class="badge">Populaire</span>
-          <h4>Pro</h4>
-          <div class="desc">Pour les entreprises qui veulent mieux gérer leurs ventes.</div>
-          <div class="price"><strong>5 000 FCFA/mois</strong></div>
-          <p class="fee-note">10 000 FCFA à l'inscription, premier mois inclus</p>
-          <ul>
-            <li>Catégories, produits, FAQ et avis illimités</li>
-            <li>Statistiques avancées (panier moyen, top produits, graphiques)</li>
-            <li>Gestion de stock</li>
-            <li>Suivi de vos dépenses</li>
-            <li>QR Code + affiche de lancement</li>
-          </ul>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Pro%20CMD" class="btn btn-primary">Choisir Pro</a>
-        </div>
-        <div class="plan soon" data-aos="fade-up" data-aos-delay="240">
-          <span class="badge soon-badge">Bientôt</span>
-          <h4>Premium</h4>
-          <div class="desc">Des fonctionnalités avancées pour les boutiques en croissance.</div>
-          <div class="price"> <strong>10 000FCFA</strong></div>
-          <p class="fee-note">15 000 FCFA à l'inscription, premier mois inclus</p>
-          <ul>
-            <li>Tout Pro, en plus</li>
-            <li>Bénéfice net calculé automatiquement (ventes − dépenses)</li>
-            <li>Facture PDF pour vous et vos clients</li>
-            <li>Export Excel de vos chiffres (CA, stock)</li>
-          </ul>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Premium%20CMD" class="btn btn-primary">Choisir Premium</a>
-        </div>
-      </div>
-
-      <!-- Tarifs prestataires : prix provisoires à confirmer avant mise en ligne -->
-      <div class="pricing-grid" id="pricing-presta" style="display:none;">
-        <div class="plan" data-aos="fade-up">
-          <h4>Standard</h4>
-          <div class="desc">L'essentiel pour démarrer la prise de rendez-vous en ligne.</div>
-          <div class="price"><strong>6 000 FCFA/mois</strong></div>
-          <p class="fee-note">[FRAIS D'INSCRIPTION À CONFIRMER], premier mois inclus</p>
-          <ul>
-            <li>Jusqu'à 5 prestations</li>
-            <li>1 prestataire</li>
-            <li>FAQ (5 questions max)</li>
-            <li>10 derniers avis affichés</li>
-            <li>Réservation via WhatsApp</li>
-            <li>QR Code + affiche de lancement</li>
-          </ul>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Standard%20Prestataire%20CMD" class="btn btn-ghost">Choisir Standard</a>
-        </div>
-        <div class="plan featured" data-aos="fade-up" data-aos-delay="120">
-          <span class="badge">Populaire</span>
-          <h4>Pro</h4>
-          <div class="desc">Pour les prestataires qui gèrent une équipe.</div>
-          <div class="price"><strong>12 000 FCFA/mois</strong></div>
-          <p class="fee-note">[FRAIS D'INSCRIPTION À CONFIRMER], premier mois inclus</p>
-          <ul>
-            <li>Prestations, FAQ et avis illimités</li>
-            <li>Équipe illimitée (plusieurs prestataires)</li>
-            <li>Gestion des horaires et jours de fermeture</li>
-            <li>Statistiques de rendez-vous</li>
-            <li>QR Code + affiche de lancement</li>
-          </ul>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Pro%20Prestataire%20CMD" class="btn btn-primary">Choisir Pro</a>
-        </div>
-        <div class="plan soon" data-aos="fade-up" data-aos-delay="240">
-          <span class="badge soon-badge">Bientôt</span>
-          <h4>Premium</h4>
-          <div class="desc">Boutique + prestations réunies sur une seule page (mode hybride).</div>
-          <div class="price"><strong>[PRIX À CONFIRMER]</strong></div>
-          <p class="fee-note">[FRAIS D'INSCRIPTION À CONFIRMER], premier mois inclus</p>
-          <ul>
-            <li>Tout Pro, en plus</li>
-            <li>Mode hybride : boutique + réservation</li>
-            <li>Statistiques avancées</li>
-            <li>Export Excel de vos rendez-vous</li>
-          </ul>
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20Premium%20Prestataire%20CMD" class="btn btn-primary">Choisir Premium</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div id="compare-modal" class="modal-overlay">
-    <div class="modal-box">
-      <button class="modal-close" onclick="document.getElementById('compare-modal').classList.remove('open')">✕</button>
-      <h3>Comparatif des formules</h3>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Fonctionnalité</th><th>Standard</th><th>Pro</th><th>Premium</th></tr></thead>
-          <tbody>
-            <tr><td>Catalogue, panier, commande WhatsApp</td><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Catégories / Produits</td><td>5 / 20 max</td><td>Illimité</td><td>Illimité</td></tr>
-            <tr><td>FAQ</td><td>5 max</td><td>Illimité</td><td>Illimité</td></tr>
-            <tr><td>Avis clients</td><td>10 derniers</td><td>Illimité</td><td>Illimité</td></tr>
-            <tr><td>Stats avancées</td><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Gestion de stock</td><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Suivi des dépenses</td><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Bénéfice net</td><td>—</td><td>—</td><td>✓</td></tr>
-            <tr><td>Export PDF</td><td>—</td><td>—</td><td>✓</td></tr>
-            <tr><td>Export Excel</td><td>—</td><td>—</td><td>✓</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Choix de la démo : boutique ou prestataire, même mécanique de modale
-       que le comparatif des formules ci-dessus -->
-  <div id="demo-modal" class="modal-overlay">
-    <div class="modal-box" style="max-width:480px;">
-      <button class="modal-close" onclick="document.getElementById('demo-modal').classList.remove('open')">✕</button>
-      <h3>Quelle démo voulez-vous voir ?</h3>
-      <p style="margin:8px 0 22px;color:var(--gray);">Le fonctionnement change selon votre activité — choisissez celle qui vous correspond.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="https://moncmd.github.io/" target="_blank" class="btn btn-primary" style="width:100%;box-sizing:border-box;text-align:center;">🛍 Démo boutique</a>
-        <a href="https://moncmd.github.io/index-prestations-editorial.html" target="_blank" class="btn" style="width:100%;box-sizing:border-box;text-align:center;border:1.5px solid var(--line-strong);color:var(--white);background:none;">📅 Démo prestataire</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">Ils ont testé CMD</span>
-        <h2>Ce qu'en disent nos premiers vendeurs.</h2>
-      </div>
-    </div>
-    <div class="marquee" data-aos="fade-up">
-      <div class="marquee-track">
-        <!-- Témoignages à remplacer par les vrais avis collectés. Pour une vraie photo, remplacer <div class="t-avatar"></div> par <img class="t-avatar" src="photo.jpg"> -->
-        <div class="t-card"><div class="stars">★★★★★</div><p>"Depuis que j'utilise CMD, mes clients ne me redemandent plus les prix en boucle. Tout est clair."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeuse test 1</div><div class="role">Boutique mode</div></div></div></div>
-        <div class="t-card"><div class="stars">★★★★★</div><p>"La mise en place a été rapide et mes commandes sont beaucoup mieux organisées qu'avant."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeur test 2</div><div class="role">Accessoires</div></div></div></div>
-        <div class="t-card"><div class="stars">★★★★★</div><p>"Le QR Code de lancement m'a permis d'avoir mes premiers clients dès la première semaine."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeuse test 3</div><div class="role">Cosmétiques</div></div></div></div>
-        <div class="t-card"><div class="stars">★★★★★</div><p>"Enfin une boutique qui donne une vraie image professionnelle à mon activité."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeur test 4</div><div class="role">Chaussures</div></div></div></div>
-        <!-- Duplication pour un défilement infini fluide -->
-        <div class="t-card"><div class="stars">★★★★★</div><p>"Depuis que j'utilise CMD, mes clients ne me redemandent plus les prix en boucle. Tout est clair."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeuse test 1</div><div class="role">Boutique mode</div></div></div></div>
-        <div class="t-card"><div class="stars">★★★★★</div><p>"La mise en place a été rapide et mes commandes sont beaucoup mieux organisées qu'avant."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeur test 2</div><div class="role">Accessoires</div></div></div></div>
-        <div class="t-card"><div class="stars">★★★★★</div><p>"Le QR Code de lancement m'a permis d'avoir mes premiers clients dès la première semaine."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeuse test 3</div><div class="role">Cosmétiques</div></div></div></div>
-        <div class="t-card"><div class="stars">★★★★★</div><p>"Enfin une boutique qui donne une vraie image professionnelle à mon activité."</p><div class="t-author"><div class="t-avatar"></div><div><div class="name">Vendeur test 4</div><div class="role">Chaussures</div></div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
   <section>
     <div class="wrap">
-      <div class="cta-band" data-aos="zoom-in">
-        <h2>Prêt à ranger votre catalogue une bonne fois pour toutes ?</h2>
-        <p>Écrivez-nous sur WhatsApp, on vous montre comment CMD s'adapte à votre activité.</p>
-        <div class="cta-row">
-          <a href="https://wa.me/221784218267?text=Bonjour%2C%20je%20voudrais%20passer%20%C3%A0%20CMD" class="btn btn-primary">Discuter sur WhatsApp</a>
-        </div>
+      <div class="section-head"><h2>Le lancement de CMD, en vidéo.</h2></div>
+      <div class="cadre-video">
+        <video controls preload="none" playsinline poster="poster-lancement.jpg"><source src="CMD.mp4" type="video/mp4"></video>
       </div>
     </div>
   </section>
-  <!-- FAQ -->
+
+  <section class="fond-alt" id="tarifs">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Une formule pour chaque étape de votre activité.</h2>
+        <p>Commencez simple, évoluez quand vous êtes prêt. Paiement mensuel, sans engagement.</p>
+        <div class="bascule" role="group" aria-label="Type d'activité">
+          <button type="button" data-activite="boutique" aria-pressed="true">Boutique</button>
+          <button type="button" data-activite="prestation" aria-pressed="false">Prestataires</button>
+        </div>
+        <p class="essai-note" id="essai-note"></p>
+      </div>
+      <div class="grille-prix" id="grille-prix"></div>
+      <button class="lien-comparer" id="btn-comparer" type="button" aria-expanded="false" aria-controls="tableau-comparatif">Comparer les formules en détail</button>
+      <div class="tableau-wrap" id="tableau-comparatif"></div>
+    </div>
+  </section>
+
+  <section id="temoignages" hidden>
+    <div class="wrap">
+      <div class="section-head"><h2>Ce qu'en disent nos clients.</h2></div>
+      <div class="temoignages-grille" id="temoignages-grille"></div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="mono">Questions fréquentes</span>
-        <h2>Tout ce qu'il faut savoir avant de se lancer.</h2>
+      <div class="section-head"><h2>Tout ce qu'il faut savoir avant de se lancer.</h2></div>
+      <div class="faq">
+        <h3>Démarrer</h3>
+        <details open data-si-inscription><summary>Comment je crée ma boutique&nbsp;?</summary><p>Cliquez sur «&nbsp;Créer ma boutique&nbsp;», choisissez votre activité, le nom et l'adresse de votre boutique, votre numéro WhatsApp, puis votre email et un mot de passe. Vous arrivez directement dans votre tableau de bord.</p></details>
+        <details><summary>Est-ce que j'ai besoin de compétences techniques&nbsp;?</summary><p>Non. Tout se gère depuis votre téléphone, aussi simplement que vos réseaux sociaux.</p></details>
+        <details data-si-inscription><summary>Que se passe-t-il après les 14 jours d'essai&nbsp;?</summary><p>Votre boutique reste en ligne et passe en formule Standard. Pour garder Pro ou Premium, écrivez-nous sur WhatsApp depuis le bouton de votre tableau de bord.</p></details>
+        <details><summary>J'ai oublié mon mot de passe.</summary><p>Sur la page de connexion, écrivez votre email puis cliquez sur «&nbsp;Mot de passe oublié&nbsp;?&nbsp;». Vous recevez un lien pour en choisir un nouveau.</p></details>
+
+        <h3>Commandes et rendez-vous</h3>
+        <details><summary>Comment mes clients commandent-ils&nbsp;?</summary><p>Ils parcourent votre catalogue, remplissent leur panier et valident. La commande arrive sur votre WhatsApp, déjà résumée avec les produits, les quantités et le total.</p></details>
+        <details><summary>Comment mes clients prennent-ils rendez-vous&nbsp;?</summary><p>Ils choisissent la prestation, éventuellement la personne de votre équipe, puis une date et un créneau libre. La demande arrive sur votre WhatsApp.</p></details>
+        <details><summary>Comment mes clients paient-ils&nbsp;?</summary><p>Wave, Orange Money ou espèces à la livraison, comme ils en ont l'habitude. Vous choisissez les moyens de paiement que vous acceptez.</p></details>
+
+        <h3>Fonctionnalités</h3>
+        <details><summary>Comment fonctionnent les avis clients&nbsp;?</summary><p>Vos clients laissent leur avis sur votre page. Vous validez chaque avis avant qu'il soit publié, pour éviter les faux commentaires.</p></details>
+        <details><summary>Est-ce que je peux suivre mon stock&nbsp;?</summary><p>Oui, à partir de la formule Pro. Le stock baisse automatiquement à chaque commande, et vos clients peuvent demander à être prévenus quand un produit revient.</p></details>
+        <details><summary>Puis-je gérer plusieurs personnes dans mon équipe&nbsp;?</summary><p>Oui, à partir de la formule Pro (jusqu'à 5 personnes), et sans limite en Premium. Chaque personne a ses propres prestations.</p></details>
+
+        <h3>Formules</h3>
+        <details><summary>Quelle différence entre Standard, Pro et Premium&nbsp;?</summary><p>Standard couvre l'essentiel pour démarrer. Pro retire les limites et ajoute le stock, les statistiques et le suivi des dépenses. Premium ajoute le bénéfice net, les codes promo, les reçus PDF et l'export de vos commandes. Le détail est dans le comparatif des tarifs.</p></details>
+        <details><summary>Puis-je changer de formule plus tard&nbsp;?</summary><p>Oui, à tout moment. Écrivez-nous sur WhatsApp et le changement est fait le jour même.</p></details>
+        <details><summary>Suis-je engagé sur une longue durée&nbsp;?</summary><p>Non, le paiement est mensuel. Vous restez libre d'arrêter quand vous voulez.</p></details>
       </div>
-      <div class="faq-list" data-aos="fade-up">
-        <div class="faq-cat">Fonctionnement général</div>
-        <details class="faq-item" open>
-          <summary>Comment mes clients commandent-ils ?</summary>
-          <p>Ils parcourent votre catalogue, ajoutent leurs produits au panier, et valident. La commande arrive directement sur votre WhatsApp, déjà résumée avec produits, quantités et total.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Est-ce que j'ai besoin de compétences techniques ?</summary>
-          <p>Non. Vous gérez tout depuis votre tableau de bord, aussi simplement que vous géreriez vos réseaux sociaux.</p>
-        </details>
+    </div>
+  </section>
 
-        <div class="faq-cat">Prestataires de services</div>
-        <details class="faq-item">
-          <summary>Comment mes clients prennent-ils rendez-vous ?</summary>
-          <p>Ils choisissent la prestation, éventuellement la personne de votre équipe, puis une date et un créneau libre. La demande arrive directement sur votre WhatsApp.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Puis-je gérer plusieurs prestataires ?</summary>
-          <p>Oui, avec la formule Pro. Chaque prestataire a ses propres prestations et créneaux.</p>
-        </details>
-
-        <div class="faq-cat">Paiements</div>
-        <details class="faq-item">
-          <summary>Comment mes clients paient-ils ?</summary>
-          <p>Wave, Orange Money, ou espèces à la livraison — comme ils en ont déjà l'habitude, sans rien changer à leurs habitudes.</p>
-        </details>
-
-        <div class="faq-cat">Fonctionnalités</div>
-        <details class="faq-item">
-          <summary>C'est quoi le FAQ personnalisable ?</summary>
-          <p>Vous répondez vous-même aux questions que vos clients vous posent le plus (livraison, disponibilité, horaires...) directement sur votre boutique ou votre page de réservation — ils n'ont plus besoin de vous écrire pour le savoir.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Comment fonctionnent les avis clients ?</summary>
-          <p>Vos clients laissent leur avis après achat ou rendez-vous. Vous validez chaque avis avant qu'il soit publié, pour garder une activité fiable et éviter les faux commentaires.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Est-ce que je peux suivre mon stock ?</summary>
-          <p>Oui, avec la formule Premium. Le stock se met à jour automatiquement à chaque commande, et vos clients voient quand il n'en reste plus beaucoup.</p>
-        </details>
-
-        <div class="faq-cat">Formules</div>
-        <details class="faq-item">
-          <summary>Quelle est la différence entre Standard et Premium ?</summary>
-          <p>Le Standard couvre l'essentiel pour démarrer (catalogue, commandes WhatsApp, FAQ, avis). Le Premium ajoute la gestion de stock et des statistiques de vente plus poussées — pensé pour les boutiques qui ont déjà du volume.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Puis-je changer de formule plus tard ?</summary>
-          <p>Oui, vous pouvez évoluer vers le Premium dès que votre activité grandit.</p>
-        </details>
-
-        <div class="faq-cat">Engagement</div>
-        <details class="faq-item">
-          <summary>Suis-je engagé sur une longue durée ?</summary>
-          <p>Non, le paiement reste mensuel — vous restez libre d'arrêter quand vous voulez.</p>
-        </details>
+  <section>
+    <div class="wrap">
+      <div class="final">
+        <h2>Prêt à ranger votre catalogue une bonne fois pour toutes&nbsp;?</h2>
+        <p>Créez votre boutique maintenant, ou écrivez-nous si vous voulez qu'on vous montre comment CMD s'adapte à votre activité.</p>
+        <div class="rangee-cta">
+          <a class="btn btn-primary" data-lien="inscription" href="#">Créer ma boutique</a>
+          <a class="btn btn-clair" data-lien="whatsapp" href="#" target="_blank" rel="noopener">Discuter sur WhatsApp</a>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap footer-row">
-    <div class="footer-brand"><img src="1C621DE3-4443-4809-A987-882F313088E0_1_105_c.jpeg" alt="Logo CMD"> © 2026 CMD — Powered by HV</div>
-    <div class="social-links">
-      <a href="https://www.instagram.com/bara_wrld?igsh=MXIwMmJ4c2Z1NDRqdg==" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@mon.cmd?_r=1&_t=ZS-98IwUL5dF3c" target="_blank">TikTok</a>
-      <a href="https://wa.me/221784218267" target="_blank">WhatsApp</a>
-    </div>
+  <div class="wrap pied">
+    <span class="marque"><img src="1C621DE3-4443-4809-A987-882F313088E0_1_105_c.jpeg" alt=""> © 2026 CMD — Powered by HV</span>
+    <nav aria-label="Réseaux sociaux">
+      <a href="https://www.instagram.com/bara_wrld?igsh=MXIwMmJ4c2Z1NDRqdg==" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@mon.cmd?_r=1&_t=ZS-98IwUL5dF3c" target="_blank" rel="noopener">TikTok</a>
+      <a data-lien="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a data-lien="connexion" href="#">Espace vendeur</a>
+    </nav>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 <script>
-  function basculerTarifs(quel) {
-    document.getElementById('pricing-boutique').style.display = quel === 'boutique' ? 'grid' : 'none';
-    document.getElementById('pricing-presta').style.display = quel === 'presta' ? 'grid' : 'none';
-    document.getElementById('toggle-boutique').classList.toggle('active', quel === 'boutique');
-    document.getElementById('toggle-presta').classList.toggle('active', quel === 'presta');
-  }
+// =====================================================================
+// RÉGLAGES DU SITE — tout ce qui change souvent est ici, à un seul endroit.
+// Les limites ci-dessous reflètent ce que l'application applique vraiment
+// (admin.js / admin-prestations.js). Si tu changes une limite dans l'app,
+// change-la ici aussi.
+// =====================================================================
 
-  AOS.init({
-    duration: 700,
-    once: true,
-    offset: 60,
-    easing: 'ease-out-cubic'
-  });
+const APP = 'https://shop.moncmd.site';
+const WHATSAPP = '221784218267';
+
+// Inscription autonome : laisse false tant que la phase 2 n'est pas en ligne
+// sur shop.moncmd.site. Tant que c'est false, tous les boutons « Créer ma
+// boutique » ouvrent WhatsApp (aucun lien cassé). Passe à true ensuite.
+const INSCRIPTION_OUVERTE = false;
+
+// Frais de mise en service : mets false pour les masquer partout.
+const AFFICHER_FRAIS = true;
+
+const LIENS = {
+  'inscription': APP + '/inscription.html',
+  'inscription-prestation': APP + '/inscription.html?type=prestation',
+  'connexion': APP + '/admin.html',
+  'demo-boutique': APP + '/index.html',
+  'demo-prestation': APP + '/index-prestations-editorial.html',
+  'whatsapp': 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Bonjour, je voudrais en savoir plus sur CMD')
+};
+
+// prix / frais en FCFA. prix: null = « Sur demande ». frais: null = pas affiché.
+// Frais de mise en service = premier mois inclus (environ le mois + 5 000 FCFA).
+const FORMULES = {
+  boutique: [
+    { nom: 'Standard', prix: 2500, frais: 6000,
+      desc: "L'essentiel pour lancer votre boutique en ligne.",
+      points: ["Jusqu'à 20 produits et 5 catégories", "FAQ : 5 questions", "Les 10 derniers avis affichés", "Commande via WhatsApp, paiement Wave ou Orange Money", "QR Code et affiche de lancement"] },
+    { nom: 'Pro', prix: 5000, frais: 10000, populaire: true,
+      desc: "Pour mieux gérer vos ventes au quotidien.",
+      points: ["Produits, catégories et FAQ illimités", "Les 30 derniers avis affichés", "Statistiques avancées : panier moyen, top produits, graphique sur 7 jours", "Gestion du stock et liste d'attente de réassort", "Suivi de vos dépenses"] },
+    { nom: 'Premium', prix: 10000, frais: 15000,
+      desc: "Pour les boutiques qui ont déjà du volume.",
+      points: ["Tout Pro, en plus :", "Bénéfice net calculé automatiquement", "Codes promo pour vos clients", "Reçu PDF à chaque commande", "Export de vos commandes (Excel)", "Message d'accueil en haut de votre boutique"] }
+  ],
+  prestation: [
+    { nom: 'Standard', prix: 6000, frais: 11000,
+      desc: "L'essentiel pour prendre vos rendez-vous en ligne.",
+      points: ["Jusqu'à 20 prestations", "Agenda, horaires et jours de fermeture", "Galerie de réalisations", "FAQ : 5 questions", "Les 10 derniers avis affichés", "QR Code et affiche de lancement"] },
+    { nom: 'Pro', prix: 12000, frais: 17000, populaire: true,
+      desc: "Pour les prestataires qui travaillent en équipe.",
+      points: ["Jusqu'à 50 prestations", "Équipe : jusqu'à 5 personnes", "Blocage de créneaux précis", "FAQ illimitée, les 30 derniers avis affichés", "Suivi de vos dépenses"] },
+    // visible: false → carte et colonne du comparatif masquées. Passe à true
+    // (et mets un prix) le jour où tu proposes Premium aux prestataires.
+    { nom: 'Premium', prix: null, frais: null, visible: false,
+      desc: "Pour les salons qui grandissent.",
+      points: ["Tout Pro, en plus :", "Prestations et équipe illimitées", "Bénéfice net calculé automatiquement", "Mode hybride : boutique et réservation sur une seule page"] }
+  ]
+};
+
+// Comparatif : une ligne = [libellé, Standard, Pro, Premium]. true = ✓, false = —
+const COMPARATIF = {
+  boutique: [
+    ["Catalogue, panier, commande WhatsApp", true, true, true],
+    ["Produits", "20", "Illimité", "Illimité"],
+    ["Catégories", "5", "Illimité", "Illimité"],
+    ["Questions de FAQ", "5", "Illimité", "Illimité"],
+    ["Avis affichés", "10 derniers", "30 derniers", "30 derniers"],
+    ["Statistiques avancées", false, true, true],
+    ["Gestion du stock et réassort", false, true, true],
+    ["Suivi des dépenses", false, true, true],
+    ["Bénéfice net", false, false, true],
+    ["Codes promo", false, false, true],
+    ["Reçu PDF", false, false, true],
+    ["Export des commandes", false, false, true]
+  ],
+  prestation: [
+    ["Réservation en ligne, demande WhatsApp", true, true, true],
+    ["Prestations", "20", "50", "Illimité"],
+    ["Équipe", "Vous seul(e)", "5 personnes", "Illimitée"],
+    ["Galerie de réalisations", true, true, true],
+    ["Questions de FAQ", "5", "Illimité", "Illimité"],
+    ["Avis affichés", "10 derniers", "30 derniers", "30 derniers"],
+    ["Blocage de créneaux précis", false, true, true],
+    ["Suivi des dépenses", false, true, true],
+    ["Bénéfice net", false, false, true],
+    ["Mode hybride boutique + réservation", false, false, true]
+  ]
+};
+
+// Vrais avis uniquement. La section reste cachée tant que la liste est vide.
+// Exemple : { texte: "…", nom: "Global Finds", activite: "Boutique import" }
+const TEMOIGNAGES = [];
+
+const PHOTOS_VITRINE = ['showcase-1.jpg','showcase-2.jpg','showcase-3.jpg','showcase-4.jpg','showcase-5.jpg','showcase-6.jpg','showcase-7.jpg','showcase-8.jpg','showcase-9.jpg'];
+
+// =====================================================================
+// Ne pas modifier en dessous (sauf besoin technique)
+// =====================================================================
+const fcfa = (n) => n.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ') + ' FCFA';
+const echapper = (t) => String(t).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+if (!INSCRIPTION_OUVERTE) {
+  document.querySelectorAll('[data-si-inscription]').forEach((el) => el.remove());
+  const ecrire = (texte) => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texte);
+  LIENS['inscription'] = ecrire('Bonjour, je voudrais créer ma boutique CMD');
+  LIENS['inscription-prestation'] = ecrire('Bonjour, je voudrais créer ma page de réservation CMD');
+}
+
+document.querySelectorAll('[data-lien]').forEach((a) => {
+  const cible = LIENS[a.dataset.lien];
+  if (cible) a.href = cible;
+  if (cible && cible.startsWith('https://wa.me/')) { a.target = '_blank'; a.rel = 'noopener'; }
+});
+
+function afficherTarifs(activite) {
+  const lienInscription = activite === 'prestation' ? LIENS['inscription-prestation'] : LIENS['inscription'];
+  document.getElementById('essai-note').textContent = INSCRIPTION_OUVERTE
+    ? (activite === 'prestation' ? 'Chaque nouvelle page commence par 14 jours en Pro, offerts.' : 'Chaque nouvelle boutique commence par 14 jours en Premium, offerts.')
+    : '';
+  const indexVisibles = FORMULES[activite].map((f, i) => f.visible === false ? -1 : i).filter((i) => i >= 0);
+  const formules = indexVisibles.map((i) => FORMULES[activite][i]);
+  const grille = document.getElementById('grille-prix');
+  grille.style.gridTemplateColumns = window.innerWidth > 960 ? `repeat(${formules.length}, 1fr)` : '';
+  grille.style.maxWidth = (window.innerWidth > 960 && formules.length < 3) ? '780px' : '';
+  grille.innerHTML = formules.map((f) => {
+    const prix = f.prix === null ? 'Sur demande' : `${fcfa(f.prix)} <small>/ mois</small>`;
+    const frais = (AFFICHER_FRAIS && f.frais) ? `Mise en service : ${fcfa(f.frais)}, premier mois inclus` : '';
+    const cta = f.prix === null
+      ? `<a class="btn btn-ligne" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Bonjour, je voudrais le tarif de la formule ' + f.nom + ' prestataire CMD')}">Demander le tarif</a>`
+      : `<a class="btn ${f.populaire ? 'btn-primary' : 'btn-ligne'}" href="${lienInscription}"${INSCRIPTION_OUVERTE ? '' : ' target="_blank" rel="noopener"'}>${INSCRIPTION_OUVERTE ? "Commencer l'essai" : 'Choisir ' + echapper(f.nom)}</a>`;
+    return `<article class="formule${f.populaire ? ' populaire' : ''}">
+      ${f.populaire ? '<span class="badge">La plus choisie</span>' : ''}
+      <h3>${echapper(f.nom)}</h3>
+      <p class="desc">${echapper(f.desc)}</p>
+      <div class="prix">${prix}</div>
+      <p class="frais">${frais}</p>
+      <ul>${f.points.map((p) => `<li>${echapper(p)}</li>`).join('')}</ul>
+      ${cta}
+    </article>`;
+  }).join('');
+
+  const cellule = (v) => v === true ? '<td aria-label="Inclus">✓</td>' : v === false ? '<td class="non" aria-label="Non inclus">—</td>' : `<td>${echapper(v)}</td>`;
+  document.getElementById('tableau-comparatif').innerHTML = `<table>
+    <thead><tr><th>Fonctionnalité</th>${formules.map((f) => `<th>${echapper(f.nom)}</th>`).join('')}</tr></thead>
+    <tbody>${COMPARATIF[activite].filter((l) => indexVisibles.some((i) => l[i + 1] !== false)).map((l) => `<tr><td>${echapper(l[0])}</td>${indexVisibles.map((i) => cellule(l[i + 1])).join('')}</tr>`).join('')}</tbody>
+  </table>`;
+
+  document.querySelectorAll('.bascule button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.activite === activite)));
+}
+
+document.querySelectorAll('.bascule button').forEach((b) => b.addEventListener('click', () => afficherTarifs(b.dataset.activite)));
+afficherTarifs('boutique');
+
+document.getElementById('btn-comparer').addEventListener('click', (e) => {
+  const tableau = document.getElementById('tableau-comparatif');
+  const ouvert = tableau.classList.toggle('ouvert');
+  e.currentTarget.setAttribute('aria-expanded', String(ouvert));
+  e.currentTarget.textContent = ouvert ? 'Masquer le comparatif' : 'Comparer les formules en détail';
+});
+
+if (TEMOIGNAGES.length) {
+  document.getElementById('temoignages').hidden = false;
+  document.getElementById('temoignages-grille').innerHTML = TEMOIGNAGES.map((t) => `
+    <figure class="temoignage"><p>« ${echapper(t.texte)} »</p>
+    <figcaption><div class="qui">${echapper(t.nom)}</div><div class="activite">${echapper(t.activite || '')}</div></figcaption></figure>`).join('');
+}
+
+const piste = document.getElementById('vitrine-piste');
+piste.innerHTML = [...PHOTOS_VITRINE, ...PHOTOS_VITRINE].map((src, i) =>
+  `<img src="${src}" alt="" loading="lazy" ${i >= PHOTOS_VITRINE.length ? 'aria-hidden="true"' : ''}>`).join('');
+
+const entete = document.getElementById('entete');
+const btnMenu = document.getElementById('btn-menu');
+btnMenu.addEventListener('click', () => {
+  const ouvert = entete.classList.toggle('ouvert');
+  btnMenu.setAttribute('aria-expanded', String(ouvert));
+  btnMenu.textContent = ouvert ? '✕' : '☰';
+});
+document.querySelectorAll('#liens a').forEach((a) => a.addEventListener('click', () => {
+  entete.classList.remove('ouvert'); btnMenu.setAttribute('aria-expanded', 'false'); btnMenu.textContent = '☰';
+}));
 </script>
-
 </body>
 </html>
